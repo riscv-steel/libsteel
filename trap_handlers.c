@@ -5,7 +5,7 @@
 // SPDX-License-Identifier: MIT
 // ----------------------------------------------------------------------------
 
-#include "libsteel/globals.h"
+#include "globals.h"
 
 /**
  * @brief Return from trap handler. Write to the Machine Interrupt Enable bit of the MSTATUS CSR the
