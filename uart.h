@@ -8,7 +8,7 @@
 #ifndef __LIBSTEEL_UART__
 #define __LIBSTEEL_UART__
 
-#include "libsteel/globals.h"
+#include "globals.h"
 
 // Struct providing access to RISC-V Steel UART Device registers
 typedef struct

@@ -8,7 +8,7 @@
 #ifndef __LIBSTEEL_MTIMER__
 #define __LIBSTEEL_MTIMER__
 
-#include "libsteel/globals.h"
+#include "globals.h"
 
 // Struct providing access to RISC-V Steel MTimer Device registers
 typedef struct

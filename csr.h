@@ -8,7 +8,7 @@
 #ifndef __LIBSTEEL_CSR__
 #define __LIBSTEEL_CSR__
 
-#include "libsteel/globals.h"
+#include "globals.h"
 
 #if __riscv_xlen != 32
 #error "Unsupported XLEN"

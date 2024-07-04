@@ -8,7 +8,7 @@
 #ifndef __LIBSTEEL_GPIO__
 #define __LIBSTEEL_GPIO__
 
-#include "libsteel/globals.h"
+#include "globals.h"
 
 // Struct providing access to RISC-V Steel GPIO Device registers
 typedef struct

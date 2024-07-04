@@ -8,11 +8,11 @@
 #ifndef __LIBSTEEL_MCU__
 #define __LIBSTEEL_MCU__
 
-#include "libsteel/csr.h"
-#include "libsteel/gpio.h"
-#include "libsteel/mtimer.h"
-#include "libsteel/spi.h"
-#include "libsteel/uart.h"
+#include "csr.h"
+#include "gpio.h"
+#include "mtimer.h"
+#include "spi.h"
+#include "uart.h"
 
 // Memory Map
 #define RVSTEEL_UART_ADDRESS 0x80000000U
