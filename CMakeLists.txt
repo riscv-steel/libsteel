@@ -7,6 +7,8 @@
 
 cmake_minimum_required(VERSION 3.15)
 
+enable_language(C CXX ASM)
+
 if(DEFINED STARTUP_DATA_ROM)
   add_compile_definitions(STARTUP_DATA_ROM=1)
 endif()
