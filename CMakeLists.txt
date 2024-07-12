@@ -7,6 +7,7 @@
 
 cmake_minimum_required(VERSION 3.15)
 
+project(libsteel)
 enable_language(C CXX ASM)
 
 if(DEFINED STARTUP_DATA_ROM)
@@ -55,19 +56,19 @@ else()
 endif()
 
 set(SOURCES
-  ${CMAKE_CURRENT_LIST_DIR}/boot.S
-  ${CMAKE_CURRENT_LIST_DIR}/trap_vector.S
-  ${CMAKE_CURRENT_LIST_DIR}/trap_handlers.c
+  ${CMAKE_CURRENT_LIST_DIR}/source/boot.S
+  ${CMAKE_CURRENT_LIST_DIR}/source/trap_vector.S
+  ${CMAKE_CURRENT_LIST_DIR}/source/trap_handlers.c
 )
 
 set(HEADERS
-  ${CMAKE_CURRENT_LIST_DIR}/csr.h
-  ${CMAKE_CURRENT_LIST_DIR}/globals.h
-  ${CMAKE_CURRENT_LIST_DIR}/gpio.h
-  ${CMAKE_CURRENT_LIST_DIR}/mtimer.h
-  ${CMAKE_CURRENT_LIST_DIR}/libsteel.h
-  ${CMAKE_CURRENT_LIST_DIR}/spi.h
-  ${CMAKE_CURRENT_LIST_DIR}/uart.h
+  ${CMAKE_CURRENT_LIST_DIR}/include/csr.h
+  ${CMAKE_CURRENT_LIST_DIR}/include/globals.h
+  ${CMAKE_CURRENT_LIST_DIR}/include/gpio.h
+  ${CMAKE_CURRENT_LIST_DIR}/include/mtimer.h
+  ${CMAKE_CURRENT_LIST_DIR}/include/libsteel.h
+  ${CMAKE_CURRENT_LIST_DIR}/include/spi.h
+  ${CMAKE_CURRENT_LIST_DIR}/include/uart.h
 )
 
 add_library(steel STATIC ${SOURCES} ${HEADERS})
@@ -87,5 +88,5 @@ target_compile_options(steel
 
 target_include_directories(steel
   PUBLIC
-    ${CMAKE_CURRENT_LIST_DIR}
+    ${CMAKE_CURRENT_LIST_DIR}/include/
 )
