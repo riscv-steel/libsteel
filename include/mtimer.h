@@ -23,7 +23,10 @@ typedef struct
   volatile uint32_t MTIMECMPL;
   // Machine Time Compare (MTIMECMP) Register highest 32 bits. Address offset: 0x10
   volatile uint32_t MTIMECMPH;
-} MTimerDevice;
+} MTimerController;
+
+// Pointer to RISC-V Steel built-in timer registers
+#define RVSTEEL_MTIMER ((MTimerController *)0x80010000)
 
 // Offset of the Counter Enable (EN) bit of the MTIME register
 #define MTIMER_CR_EN_OFFSET 0U
@@ -35,9 +38,9 @@ typedef struct
  * @brief Enable MTIMER register counting. When counting is enabled, the value of MTIMER is
  * incremented by 1 at every rising edge of the `clock` signal.
  *
- * @param mtimer Pointer to the MTimerDevice
+ * @param mtimer Pointer to the MTimerController
  */
-inline void mtimer_enable(MTimerDevice *mtimer)
+inline void mtimer_enable(MTimerController *mtimer)
 {
   SET_FLAG(mtimer->CR, MTIMER_CR_EN_MASK);
 }
@@ -46,9 +49,9 @@ inline void mtimer_enable(MTimerDevice *mtimer)
  * @brief Disable MTIMER register counting. When counting is disabled, the value of MTIMER is held
  * constant.
  *
- * @param mtimer Pointer to the MTimerDevice
+ * @param mtimer Pointer to the MTimerController
  */
-inline void mtimer_disable(MTimerDevice *mtimer)
+inline void mtimer_disable(MTimerController *mtimer)
 {
   CLR_FLAG(mtimer->CR, MTIMER_CR_EN_MASK);
 }
@@ -57,10 +60,10 @@ inline void mtimer_disable(MTimerDevice *mtimer)
  * @brief Assign a new value for MTIMER register. The value can be assigned whether counting is
  * enabled or not.
  *
- * @param mtimer Pointer to the MTimerDevice
+ * @param mtimer Pointer to the MTimerController
  * @param new_value The new 64-bit value for the MTIMER register
  */
-inline void mtimer_set_counter(MTimerDevice *mtimer, uint64_t new_value)
+inline void mtimer_set_counter(MTimerController *mtimer, uint64_t new_value)
 {
   mtimer->MTIMEL = new_value & 0xFFFFFFFF;
   mtimer->MTIMEH = new_value >> 32;
@@ -69,10 +72,10 @@ inline void mtimer_set_counter(MTimerDevice *mtimer, uint64_t new_value)
 /**
  * @brief Read the value of the MTIMER register.
  *
- * @param mtimer Pointer to the MTimerDevice
+ * @param mtimer Pointer to the MTimerController
  * @return uint64_t
  */
-inline uint64_t mtimer_get_counter(MTimerDevice *mtimer)
+inline uint64_t mtimer_get_counter(MTimerController *mtimer)
 {
   uint32_t cnt_l = mtimer->MTIMEL;
   uint64_t cnt_h = mtimer->MTIMEH;
@@ -82,9 +85,9 @@ inline uint64_t mtimer_get_counter(MTimerDevice *mtimer)
 /**
  * @brief Set the value of the MTIMER register to 0 (zero).
  *
- * @param mtimer Pointer to the MTimerDevice
+ * @param mtimer Pointer to the MTimerController
  */
-inline void mtimer_clear_counter(MTimerDevice *mtimer)
+inline void mtimer_clear_counter(MTimerController *mtimer)
 {
   mtimer->MTIMEL = 0;
   mtimer->MTIMEH = 0;
@@ -93,10 +96,10 @@ inline void mtimer_clear_counter(MTimerDevice *mtimer)
 /**
  * @brief Assign a new value for MTIMERCMP register.
  *
- * @param mtimer Pointer to the MTimerDevice
+ * @param mtimer Pointer to the MTimerController
  * @param new_value The new 64-bit value for the MTIMERCMP register
  */
-inline void mtimer_set_compare(MTimerDevice *mtimer, uint64_t new_value)
+inline void mtimer_set_compare(MTimerController *mtimer, uint64_t new_value)
 {
   /* Writing -1 to MTIMECMPL, writing the MSB word first and finally writing the LSB word prevents
    * spurious interrupts to be triggered due to the intermediate value held by the register during

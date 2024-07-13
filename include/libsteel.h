@@ -14,16 +14,4 @@
 #include "spi.h"
 #include "uart.h"
 
-// Memory Map
-#define RVSTEEL_UART_ADDRESS 0x80000000U
-#define RVSTEEL_MTIMER_ADDRESS 0x80010000U
-#define RVSTEEL_GPIO_ADDRESS 0x80020000U
-#define RVSTEEL_SPI_ADDRESS 0x80030000U
-
-// RISC-V Steel Peripherals
-#define RVSTEEL_UART ((UartDevice *)RVSTEEL_UART_ADDRESS)       // RISC-V Steel UART
-#define RVSTEEL_MTIMER ((MTimerDevice *)RVSTEEL_MTIMER_ADDRESS) // RISC-V Steel MTimer
-#define RVSTEEL_GPIO ((GpioDevice *)RVSTEEL_GPIO_ADDRESS)       // RISC-V Steel GPIO
-#define RVSTEEL_SPI ((SpiDevice *)RVSTEEL_SPI_ADDRESS)          // RISC-V Steel SPI
-
 #endif // __LIBSTEEL_MCU__

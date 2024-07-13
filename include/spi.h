@@ -13,7 +13,7 @@ typedef struct
   volatile uint32_t WDATA;       // Write Data (WDATA) register.               Address offset: 0x10.
   volatile uint32_t RDATA;       // Read Data (RDATA) register.                Address offset: 0x14.
   volatile uint32_t BUSY;        // Busy register.                             Address offset: 0x18.
-} SpiDevice;
+} SpiController;
 
 enum SpiMode
 {
@@ -27,14 +27,17 @@ enum SpiMode
   SPI_MODE3_CPOL1_CPHA1 = 3
 };
 
+// Pointer to RISC-V Steel built-in SPI controller
+#define RVSTEEL_SPI ((SpiController *)0x80030000)
+
 /**
  * @brief Set the clock polarity of the SPI Controller. An attempt to set CPOL to a value other than
  * 0 or 1 is gracefully ignored (no errors are given).
  *
- * @param spi Pointer to the SpiDevice.
+ * @param spi Pointer to the SpiController.
  * @param cpol The new clock polarity. Legal values are either 0 or 1.
  */
-inline void spi_set_cpol(SpiDevice *spi, const uint8_t cpol)
+inline void spi_set_cpol(SpiController *spi, const uint8_t cpol)
 {
   if (cpol <= 1)
     spi->CPOL = cpol;
@@ -44,10 +47,10 @@ inline void spi_set_cpol(SpiDevice *spi, const uint8_t cpol)
  * @brief Set the clock phase of the SPI Controller. An attempt to set CPHA to a value other than 0
  * or 1 is gracefully ignored (no errors are given).
  *
- * @param spi Pointer to the SpiDevice.
+ * @param spi Pointer to the SpiController.
  * @param cpha The new clock phase. Legal values are either 0 or 1.
  */
-inline void spi_set_cpha(SpiDevice *spi, const uint8_t cpha)
+inline void spi_set_cpha(SpiController *spi, const uint8_t cpha)
 {
   if (cpha <= 1)
     spi->CPHA = cpha;
@@ -56,11 +59,11 @@ inline void spi_set_cpha(SpiDevice *spi, const uint8_t cpha)
 /**
  * @brief Read the clock polarity (CPOL) register of the SPI Controller.
  *
- * @param spi Pointer to the SpiDevice.
+ * @param spi Pointer to the SpiController.
  * @return 0
  * @return 1
  */
-inline uint32_t spi_get_cpol(SpiDevice *spi)
+inline uint32_t spi_get_cpol(SpiController *spi)
 {
   return spi->CPOL;
 }
@@ -68,11 +71,11 @@ inline uint32_t spi_get_cpol(SpiDevice *spi)
 /**
  * @brief Read the clock phase (CPHA) register of the SPI Controller.
  *
- * @param spi Pointer to the SpiDevice.
+ * @param spi Pointer to the SpiController.
  * @return 0
  * @return 1
  */
-inline uint32_t spi_get_cpha(SpiDevice *spi)
+inline uint32_t spi_get_cpha(SpiController *spi)
 {
   return spi->CPHA;
 }
@@ -87,10 +90,10 @@ inline uint32_t spi_get_cpha(SpiDevice *spi)
  *   - MODE 2: equivalent to CPOL=1 and CPHA=0
  *   - MODE 3: equivalent to CPOL=1 and CPHA=1
  *
- * @param spi Pointer to the SpiDevice.
+ * @param spi Pointer to the SpiController.
  * @param mode The operation mode, chosen from `enum SpiMode.`
  */
-inline void spi_set_mode(SpiDevice *spi, enum SpiMode mode)
+inline void spi_set_mode(SpiController *spi, enum SpiMode mode)
 {
   switch (mode)
   {
@@ -118,10 +121,10 @@ inline void spi_set_mode(SpiDevice *spi, enum SpiMode mode)
 /**
  * @brief Read the current SPI operation mode.
  *
- * @param spi Pointer to the SpiDevice.
+ * @param spi Pointer to the SpiController.
  * @return enum SpiMode
  */
-inline enum SpiMode spi_get_mode(SpiDevice *spi)
+inline enum SpiMode spi_get_mode(SpiController *spi)
 {
   return ((enum SpiMode)((spi->CPHA << 1) | spi->CPOL));
 }
@@ -131,10 +134,10 @@ inline enum SpiMode spi_get_mode(SpiDevice *spi)
  * it. An attempt to select a non-existent SPI peripheral is gracefully ignored (no errors are
  * given).
  *
- * @param spi Pointer to the SpiDevice.
+ * @param spi Pointer to the SpiController.
  * @param peripheral_id The ID of the SPI peripheral to select. Note that peripheral IDs start at 0.
  */
-inline void spi_select(SpiDevice *spi, const uint8_t peripheral_id)
+inline void spi_select(SpiController *spi, const uint8_t peripheral_id)
 {
   spi->CHIP_SELECT = peripheral_id;
 }
@@ -142,9 +145,9 @@ inline void spi_select(SpiDevice *spi, const uint8_t peripheral_id)
 /**
  * @brief Deselect SPI peripherals by asserting all Chip Select (CHIP_SELECT) lines.
  *
- * @param spi Pointer to the SpiDevice.
+ * @param spi Pointer to the SpiController.
  */
-inline void spi_deselect(SpiDevice *spi)
+inline void spi_deselect(SpiController *spi)
 {
   spi->CHIP_SELECT = 0xffffffff;
 }
@@ -153,10 +156,10 @@ inline void spi_deselect(SpiDevice *spi)
  * @brief Return the ID of the SPI peripheral currently selected, or `0xff` if no peripheral is
  * selected.
  *
- * @param spi Pointer to the SpiDevice.
+ * @param spi Pointer to the SpiController.
  * @return uint8_t
  */
-inline uint8_t spi_get_cs(SpiDevice *spi)
+inline uint8_t spi_get_cs(SpiController *spi)
 {
   return spi->CHIP_SELECT;
 }
@@ -164,9 +167,9 @@ inline uint8_t spi_get_cs(SpiDevice *spi)
 /**
  * @brief Check whether the SPI controller is ready to read/write data.
  *
- * @param spi Pointer to the SpiDevice.
+ * @param spi Pointer to the SpiController.
  */
-inline bool spi_is_ready(SpiDevice *spi)
+inline bool spi_is_ready(SpiController *spi)
 {
   return spi->BUSY == 0;
 }
@@ -174,9 +177,9 @@ inline bool spi_is_ready(SpiDevice *spi)
 /**
  * @brief Wait until the SPI controller is ready to read/write data.
  *
- * @param spi Pointer to the SpiDevice.
+ * @param spi Pointer to the SpiController.
  */
-inline void spi_wait_ready(SpiDevice *spi)
+inline void spi_wait_ready(SpiController *spi)
 {
   while (!spi_is_ready(spi))
     ;
@@ -190,11 +193,11 @@ inline void spi_wait_ready(SpiDevice *spi)
  * The maximum frequency of SCLK is half the frequency of the system `clock` pin, equivalent to
  * `conf = 0`. The minimum frequency is 1/512, equivalent to `conf = 255`.
  *
- * @param spi Pointer to the SpiDevice.
+ * @param spi Pointer to the SpiController.
  * @param conf Configuration value for the SCLK pin. The frequency of the `clock` pin is divided by
  * a factor equal to `2*(conf + 1)`.
  */
-inline void spi_set_clock(SpiDevice *spi, const uint8_t conf)
+inline void spi_set_clock(SpiController *spi, const uint8_t conf)
 {
   spi->CLOCK_CONF = conf;
 }
@@ -204,10 +207,10 @@ inline void spi_set_clock(SpiDevice *spi, const uint8_t conf)
  * this function, the frequency of the SCLK pin can be calculated as: `SCLKf = clockf / (2 * (conf +
  * 1))`, where `conf` is the value returned.
  *
- * @param spi Pointer to the SpiDevice.
+ * @param spi Pointer to the SpiController.
  * @return uint8_t
  */
-inline uint8_t spi_get_clock(SpiDevice *spi)
+inline uint8_t spi_get_clock(SpiController *spi)
 {
   return spi->CLOCK_CONF;
 }
@@ -216,10 +219,10 @@ inline uint8_t spi_get_clock(SpiDevice *spi)
  * @brief Send a byte to the selected SPI peripheral and awaits until the transfer is complete. The
  * value received over the POCI pin is ignored.
  *
- * @param spi Pointer to the SpiDevice.
+ * @param spi Pointer to the SpiController.
  * @param wdata The byte to be sent.
  */
-inline void spi_write(SpiDevice *spi, const uint8_t wdata)
+inline void spi_write(SpiController *spi, const uint8_t wdata)
 {
   spi->WDATA = wdata;
   spi_wait_ready(spi);
@@ -229,10 +232,10 @@ inline void spi_write(SpiDevice *spi, const uint8_t wdata)
  * @brief Send a byte to the selected SPI peripheral and awaits until the transfer is complete. The
  * value received over the POCI pin during the transfer is returned..
  *
- * @param spi Pointer to the SpiDevice.
+ * @param spi Pointer to the SpiController.
  * @param wdata The byte to be sent.
  */
-inline uint8_t spi_transfer(SpiDevice *spi, const uint8_t wdata)
+inline uint8_t spi_transfer(SpiController *spi, const uint8_t wdata)
 {
   spi->WDATA = wdata;
   spi_wait_ready(spi);

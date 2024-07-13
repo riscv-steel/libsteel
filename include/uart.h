@@ -19,17 +19,20 @@ typedef struct
   volatile uint32_t RDATA;
   // Ready (READY) Register. Address offset: 0x08
   volatile uint32_t READY;
-} UartDevice;
+} UartController;
+
+// Pointer to RISC-V Steel built-in UART device
+#define RVSTEEL_UART ((UartController *)0x80000000)
 
 /**
  * @brief Read register READY from the UART device. Return true if the device is ready to send
  * data, false otherwise.
  *
- * @param uart Pointer to the UartDevice
+ * @param uart Pointer to the UartController
  * @return true
  * @return false
  */
-inline bool uart_ready(UartDevice *uart)
+inline bool uart_ready(UartController *uart)
 {
   return uart->READY == 1;
 }
@@ -38,10 +41,10 @@ inline bool uart_ready(UartDevice *uart)
  * @brief Read register RDATA of the UART device. The UART requests an interrupt when it
  * completes receiving new data. The new data can be read by calling this function.
  *
- * @param uart Pointer to the UartDevice
+ * @param uart Pointer to the UartController
  * @return uint8_t
  */
-inline uint8_t uart_read(UartDevice *uart)
+inline uint8_t uart_read(UartController *uart)
 {
   return uart->RDATA;
 }
@@ -50,10 +53,10 @@ inline uint8_t uart_read(UartDevice *uart)
  * @brief Write a single byte to register WDATA of the UART device. It awaits the UART to be ready
  * before writing to the register.
  *
- * @param uart Pointer to the UartDevice
+ * @param uart Pointer to the UartController
  * @param data A byte as uint8_t
  */
-inline void uart_write(UartDevice *uart, uint8_t data)
+inline void uart_write(UartController *uart, uint8_t data)
 {
   while (!uart_ready(uart))
     ;
@@ -63,10 +66,10 @@ inline void uart_write(UartDevice *uart, uint8_t data)
 /**
  * @brief Send a C-string over the UART device.
  *
- * @param uart Pointer to the UartDevice
+ * @param uart Pointer to the UartController
  * @param str A null-terminated C-string
  */
-inline void uart_write_string(UartDevice *uart, const char *str)
+inline void uart_write_string(UartController *uart, const char *str)
 {
   while (*(str) != '\0')
   {
