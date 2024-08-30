@@ -1,0 +1,9 @@
+html {
+    --primary-color: #526cfe;
+    --primary-dark-color: #303fa1;
+    --primary-light-color: #526cfe;
+}
+
+#main-menu>li:nth-child(2)>a {
+    display: none;
+}

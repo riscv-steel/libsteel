@@ -1,0 +1,19 @@
+/** \mainpage LibSteel Docs
+
+<strong>Welcome to LibSteel documentation page.</strong>
+
+LibSteel is a software library providing an API for controlling RISC-V Steel peripheral devices (UART, GPIO, SPI, and timer), handling interrupts and exceptions, and reading/writing the control and status registers of its processor core.
+
+- New to RISC-V Steel? Check the [Getting Started Guide](https://riscv-steel.github.io/riscv-steel/gettingstarted/).
+- See the \ref dev-guide "Developer Guide" to learn how to start a new software project for RISC-V Steel from examples.
+- For hardware-specific documentation, see the [Hardware Docs](https://riscv-steel.github.io/riscv-steel/).
+
+You find the documentation for LibSteel grouped by feature:
+
+- UART Controller
+- SPI Controller
+- General Purpose Input/Output (GPIO)
+- Timer
+- Control and Status Registers
+- Interrupt handling
+*/

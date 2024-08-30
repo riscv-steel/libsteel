@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="Starting_01a_01new_01project_01for_01RISC-V_01Steel" kind="page">
+    <compoundname>Starting a new project for RISC-V Steel</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><heading level="1">Starting a new project</heading>
+</para>
+<para>LibSteel comes pre-installed with the examples in the <computeroutput>examples/</computeroutput> folder of RISC-V Steel repository. If you start a new project out from one of the examples, LibSteel will be automatically built and linked to your application.</para>
+<para>We strongly recommend starting a new project from one of the examples. By doing so, you don&apos;t have to worry about boot code, linking scripts, and the complex options you need to set to get GCC cross-compiling for your embedded application.</para>
+<para>See the Starting a new project section of the Software Guide for instructions on how to start a new project from the examples. </para>
+    </detaileddescription>
+    <location file="docs/pages/newproject.dox"/>
+  </compounddef>
+</doxygen>

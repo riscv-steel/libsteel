@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structUartController" kind="struct" language="C++" prot="public">
+    <compoundname>UartController</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structUartController_1ae35663afde1f6ff3ccf9c9d971e30f5a" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>volatile uint32_t UartController::WDATA</definition>
+        <argsstring></argsstring>
+        <name>WDATA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/uart.h" line="17" column="21" bodyfile="include/uart.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structUartController_1a5dc17ab5c651b9f772e7d26859000cad" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>volatile uint32_t UartController::RDATA</definition>
+        <argsstring></argsstring>
+        <name>RDATA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/uart.h" line="19" column="21" bodyfile="include/uart.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structUartController_1aa66ffad786b883b3d993dab05ac1c998" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>volatile uint32_t UartController::READY</definition>
+        <argsstring></argsstring>
+        <name>READY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/uart.h" line="21" column="21" bodyfile="include/uart.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/uart.h" line="14" column="1" bodyfile="include/uart.h" bodystart="15" bodyend="22"/>
+    <listofallmembers>
+      <member refid="structUartController_1a5dc17ab5c651b9f772e7d26859000cad" prot="public" virt="non-virtual"><scope>UartController</scope><name>RDATA</name></member>
+      <member refid="structUartController_1aa66ffad786b883b3d993dab05ac1c998" prot="public" virt="non-virtual"><scope>UartController</scope><name>READY</name></member>
+      <member refid="structUartController_1ae35663afde1f6ff3ccf9c9d971e30f5a" prot="public" virt="non-virtual"><scope>UartController</scope><name>WDATA</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

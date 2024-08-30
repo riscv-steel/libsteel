@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_d44c64559bbebec7f509842c48db8b23" kind="dir">
+    <compoundname>include</compoundname>
+    <innerfile refid="csr_8h">csr.h</innerfile>
+    <innerfile refid="globals_8h">globals.h</innerfile>
+    <innerfile refid="gpio_8h">gpio.h</innerfile>
+    <innerfile refid="libsteel_8h">libsteel.h</innerfile>
+    <innerfile refid="mtimer_8h">mtimer.h</innerfile>
+    <innerfile refid="spi_8h">spi.h</innerfile>
+    <innerfile refid="uart_8h">uart.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/"/>
+  </compounddef>
+</doxygen>

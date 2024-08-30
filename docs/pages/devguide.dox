@@ -1,0 +1,104 @@
+/** \page dev-guide Developer Guide
+
+\section devintro Introduction
+
+This developer guide will show you how to use LibSteel to start a new software project for RISC-V Steel.
+
+Before you start, make sure you have the [RISC-V GNU Toolchain](https://github.com/riscv/riscv-gnu-toolchain) installed on your machine. The RISC-V GNU Toolchain is a suite of compilers and software development tools for the RISC-V architecture, and is needed to build LibSteel and the examples in this guide.
+
+Follow the steps below to download, install and configure the RISC-V GNU Toolchain for RISC-V Steel:
+
+### 1. Clone the RISC-V GNU Toolchain repository
+
+    git clone https://github.com/riscv-collab/riscv-gnu-toolchain
+
+### 2. Install dependencies
+
+    # Ubuntu
+    $ sudo apt-get install autoconf automake autotools-dev curl python3 python3-pip libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev ninja-build git cmake libglib2.0-dev libslirp-dev
+
+    # Fedora/CentOS/RHEL
+    $ sudo yum install autoconf automake python3 libmpc-devel mpfr-devel gmp-devel gawk  bison flex texinfo patchutils gcc gcc-c++ zlib-devel expat-devel libslirp-devel
+
+    # Arch Linux
+    $ sudo pacman -Syyu autoconf automake curl python3 libmpc mpfr gmp gawk base-devel bison flex texinfo gperf libtool patchutils bc zlib expat libslirp
+
+    # OS X
+    $ brew install python3 gawk gnu-sed gmp mpfr libmpc isl zlib expat texinfo flock libslirp
+
+### 3. Configure the toolchain for RISC-V Steel
+
+    cd riscv-gnu-toolchain
+    ./configure --with-arch=rv32izicsr --with-abi=ilp32 --prefix=/opt/riscv
+
+### 4. Compile and install the toolchain
+
+    make -j $(nproc)
+
+\section newproject Start from the examples
+
+The easiest way to get started is to copy one of the examples in the `examples/` folder of RISC-V Steel repository. You can, of course, start a new project from scratch, but then you would have to dive into the complex RISC-V GCC compiler and linker options. To save time, we recommend that you start with one of the examples and then edit the project settings.
+
+To illustrate how to get started from the examples we chose the Hello World example. Start by making a copy of it:
+
+    # Clone RISC-V Steel repository (if not cloned yet)
+    $ git clone https://github.com/riscv-steel/riscv-steel
+    
+    # Make copy of the Hello World project (here called "new_project")
+    $ cp riscv-steel/examples/hello_world/software/ new_project/
+
+The Hello World example uses CMake as its build system and contains:
+
+- a Hello World program, `main.c`
+- a linker script for RISC-V Steel
+- a Makefile to automate building tasks
+- a `CMakeLists.txt` file with build instructions for CMake
+
+Before making any changes, try building the project:
+
+    $ cd new_project
+    $ make
+
+A successfull build ends with a message like this:
+
+```
+Memory region         Used Size  Region Size  %age Used
+             RAM:        1264 B         8 KB     15.43%
+-------------------------------------------------------
+Build outputs:
+-- ELF executable:    build/hello_world.elf
+-- Memory init file:  build/hello_world.hex
+-- Disassembly:       build/hello_world.objdump
+```
+
+\section edit-settings Edit the project settings
+
+Now that you're sure your copy of the project compiles, change the project settings by editing `CMakeLists.txt`. A quick summary of the variables you can change is shown below.   
+
+| Variable            | Description                                                                                                      |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| ``APP_NAME``        | The name of the executable to be generated.                                                                      |
+| ``SOURCES``         | A list with the source files of your application.                                                                |
+| ``STACK_SIZE``      | Size of the stack section, a memory region that will be left empty for stack growth.                             |
+| ``HEAP_SIZE``       | Size of the heap section, a memory region that will be left empty for heap growth.                               |
+| ``MEMORY_SIZE``     | Maximum allowed program size so that it fits into RISC-V Steel memory. If the program exceeds MEMORY_SIZE, the linker will print error messages and the project will not build. |
+
+\section write-app Write your application
+
+Once the project is configured you can start writing your application. The start point of your app is the `main` function in `main.c`. 
+
+You can add new source files to the project by editing the `SOURCES` variable in `CMakeLists.txt`.
+
+\section build-and-run Build and run
+
+To build your application, simply run `make` from the project root folder again:
+
+    $ make
+
+The build process will generate a `.hex` file that you can use to initialize RISC-V Steel memory. This file will be saved in the `build/` folder.
+
+To run the application you need to implement RISC-V Steel microcontroller on your FPGA. Before generating the bitstream, change the `MEMORY_INIT_FILE` paramater of the instance of `rvsteel_mcu` to the absolute path of the `.hex` file. This will embed your application in the FPGA bitstream used to initialize RISC-V Steel memory.
+
+Check the [Getting Started Guide](https://riscv-steel.github.io/riscv-steel/gettingstarted/) for a full guide on how to implement RISC-V Steel on your FPGA.
+
+*/

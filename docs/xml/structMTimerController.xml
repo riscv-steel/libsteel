@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structMTimerController" kind="struct" language="C++" prot="public">
+    <compoundname>MTimerController</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structMTimerController_1a46ba5d0f0eeb6e51833a0709882a555f" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>volatile uint32_t MTimerController::CR</definition>
+        <argsstring></argsstring>
+        <name>CR</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mtimer.h" line="17" column="21" bodyfile="include/mtimer.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structMTimerController_1a07c7d27b324896bc0b460bf605cf3ba2" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>volatile uint32_t MTimerController::MTIMEL</definition>
+        <argsstring></argsstring>
+        <name>MTIMEL</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mtimer.h" line="19" column="21" bodyfile="include/mtimer.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structMTimerController_1a361ca48320310368956f5f99584660c1" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>volatile uint32_t MTimerController::MTIMEH</definition>
+        <argsstring></argsstring>
+        <name>MTIMEH</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mtimer.h" line="21" column="21" bodyfile="include/mtimer.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structMTimerController_1a10d1fccff299b76a822137b4f4115d4f" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>volatile uint32_t MTimerController::MTIMECMPL</definition>
+        <argsstring></argsstring>
+        <name>MTIMECMPL</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mtimer.h" line="23" column="21" bodyfile="include/mtimer.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structMTimerController_1a4136c10873f2526240c3d17d11f65965" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>volatile uint32_t MTimerController::MTIMECMPH</definition>
+        <argsstring></argsstring>
+        <name>MTIMECMPH</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mtimer.h" line="25" column="21" bodyfile="include/mtimer.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/mtimer.h" line="14" column="1" bodyfile="include/mtimer.h" bodystart="15" bodyend="26"/>
+    <listofallmembers>
+      <member refid="structMTimerController_1a46ba5d0f0eeb6e51833a0709882a555f" prot="public" virt="non-virtual"><scope>MTimerController</scope><name>CR</name></member>
+      <member refid="structMTimerController_1a4136c10873f2526240c3d17d11f65965" prot="public" virt="non-virtual"><scope>MTimerController</scope><name>MTIMECMPH</name></member>
+      <member refid="structMTimerController_1a10d1fccff299b76a822137b4f4115d4f" prot="public" virt="non-virtual"><scope>MTimerController</scope><name>MTIMECMPL</name></member>
+      <member refid="structMTimerController_1a361ca48320310368956f5f99584660c1" prot="public" virt="non-virtual"><scope>MTimerController</scope><name>MTIMEH</name></member>
+      <member refid="structMTimerController_1a07c7d27b324896bc0b460bf605cf3ba2" prot="public" virt="non-virtual"><scope>MTimerController</scope><name>MTIMEL</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

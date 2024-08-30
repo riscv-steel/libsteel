@@ -1,0 +1,345 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="mtimer_8h" kind="file" language="C++">
+    <compoundname>mtimer.h</compoundname>
+    <includes refid="globals_8h" local="yes">globals.h</includes>
+    <includedby refid="libsteel_8h" local="yes">include/libsteel.h</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>stdbool.h</label>
+      </node>
+      <node id="4">
+        <label>stdint.h</label>
+      </node>
+      <node id="2">
+        <label>globals.h</label>
+        <link refid="globals_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/mtimer.h</label>
+        <link refid="mtimer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>include/libsteel.h</label>
+        <link refid="libsteel_8h_source"/>
+      </node>
+      <node id="1">
+        <label>include/mtimer.h</label>
+        <link refid="mtimer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structMTimerController" prot="public">MTimerController</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="mtimer_8h_1a6d58b159a1b253533a9193396d7ca16d" prot="public" static="no">
+        <name>MTIMER_CR_EN_OFFSET</name>
+        <initializer>0U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mtimer.h" line="29" column="9" bodyfile="include/mtimer.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="mtimer_8h_1a872d43a1cafcd865cd163f8502008600" prot="public" static="no">
+        <name>MTIMER_CR_EN_MASK</name>
+        <initializer>(0x1U &lt;&lt; MTIMER_CR_EN_OFFSET)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mtimer.h" line="32" column="9" bodyfile="include/mtimer.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="mtimer_8h_1ad71f71dda2cb99626385930c8305c516" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void mtimer_enable</definition>
+        <argsstring>(MTimerController *mtimer)</argsstring>
+        <name>mtimer_enable</name>
+        <param>
+          <type><ref refid="structMTimerController" kindref="compound">MTimerController</ref> *</type>
+          <declname>mtimer</declname>
+        </param>
+        <briefdescription>
+<para>Enable MTIMER register counting. When counting is enabled, the value of MTIMER is incremented by 1 at every rising edge of the <computeroutput>clock</computeroutput> signal. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mtimer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the <ref refid="structMTimerController" kindref="compound">MTimerController</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mtimer.h" line="40" column="13" bodyfile="include/mtimer.h" bodystart="40" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="mtimer_8h_1aedcb533f80c044be10405eb9564d8d68" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void mtimer_disable</definition>
+        <argsstring>(MTimerController *mtimer)</argsstring>
+        <name>mtimer_disable</name>
+        <param>
+          <type><ref refid="structMTimerController" kindref="compound">MTimerController</ref> *</type>
+          <declname>mtimer</declname>
+        </param>
+        <briefdescription>
+<para>Disable MTIMER register counting. When counting is disabled, the value of MTIMER is held constant. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mtimer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the <ref refid="structMTimerController" kindref="compound">MTimerController</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mtimer.h" line="51" column="13" bodyfile="include/mtimer.h" bodystart="51" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="mtimer_8h_1ad26fe676ea6d182c208a88ddc15e2561" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void mtimer_set_counter</definition>
+        <argsstring>(MTimerController *mtimer, uint64_t new_value)</argsstring>
+        <name>mtimer_set_counter</name>
+        <param>
+          <type><ref refid="structMTimerController" kindref="compound">MTimerController</ref> *</type>
+          <declname>mtimer</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>new_value</declname>
+        </param>
+        <briefdescription>
+<para>Assign a new value for MTIMER register. The value can be assigned whether counting is enabled or not. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mtimer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the <ref refid="structMTimerController" kindref="compound">MTimerController</ref> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>new_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new 64-bit value for the MTIMER register </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mtimer.h" line="63" column="13" bodyfile="include/mtimer.h" bodystart="63" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="mtimer_8h_1a31acbf6e27e58f0e4616df5b4423ce2f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t mtimer_get_counter</definition>
+        <argsstring>(MTimerController *mtimer)</argsstring>
+        <name>mtimer_get_counter</name>
+        <param>
+          <type><ref refid="structMTimerController" kindref="compound">MTimerController</ref> *</type>
+          <declname>mtimer</declname>
+        </param>
+        <briefdescription>
+<para>Read the value of the MTIMER register. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mtimer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the <ref refid="structMTimerController" kindref="compound">MTimerController</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>uint64_t </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mtimer.h" line="75" column="17" bodyfile="include/mtimer.h" bodystart="75" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="mtimer_8h_1aa91189d172d9258f3ed6151fbb0acbaf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void mtimer_clear_counter</definition>
+        <argsstring>(MTimerController *mtimer)</argsstring>
+        <name>mtimer_clear_counter</name>
+        <param>
+          <type><ref refid="structMTimerController" kindref="compound">MTimerController</ref> *</type>
+          <declname>mtimer</declname>
+        </param>
+        <briefdescription>
+<para>Set the value of the MTIMER register to 0 (zero). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mtimer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the <ref refid="structMTimerController" kindref="compound">MTimerController</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mtimer.h" line="87" column="13" bodyfile="include/mtimer.h" bodystart="87" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="mtimer_8h_1a42215f3fec38edc6c132f1f6d476bf98" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void mtimer_set_compare</definition>
+        <argsstring>(MTimerController *mtimer, uint64_t new_value)</argsstring>
+        <name>mtimer_set_compare</name>
+        <param>
+          <type><ref refid="structMTimerController" kindref="compound">MTimerController</ref> *</type>
+          <declname>mtimer</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>new_value</declname>
+        </param>
+        <briefdescription>
+<para>Assign a new value for MTIMERCMP register. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mtimer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the <ref refid="structMTimerController" kindref="compound">MTimerController</ref> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>new_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new 64-bit value for the MTIMERCMP register </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mtimer.h" line="99" column="13" bodyfile="include/mtimer.h" bodystart="99" bodyend="109"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2020-2024<sp/>RISC-V<sp/>Steel<sp/>contributors</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>work<sp/>is<sp/>licensed<sp/>under<sp/>the<sp/>MIT<sp/>License,<sp/>see<sp/>LICENSE<sp/>file<sp/>for<sp/>details.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>MIT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__LIBSTEEL_MTIMER__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__LIBSTEEL_MTIMER__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;globals.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Struct<sp/>providing<sp/>access<sp/>to<sp/>RISC-V<sp/>Steel<sp/>MTimer<sp/>Device<sp/>registers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="structMTimerController" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Control<sp/>Register<sp/>(CR).<sp/>Address<sp/>offset:<sp/>0x00</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint32_t<sp/>CR;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Machine<sp/>Time<sp/>(MTIME)<sp/>Register<sp/>lowest<sp/>32<sp/>bits.<sp/>Address<sp/>offset:<sp/>0x04</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint32_t<sp/>MTIMEL;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Machine<sp/>Time<sp/>(MTIME)<sp/>Register<sp/>highest<sp/>32<sp/>bits.<sp/>Address<sp/>offset:<sp/>0x08</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint32_t<sp/>MTIMEH;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Machine<sp/>Time<sp/>Compare<sp/>(MTIMECMP)<sp/>Register<sp/>lowest<sp/>32<sp/>bits.<sp/>Address<sp/>offset:<sp/>0x0c</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint32_t<sp/>MTIMECMPL;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Machine<sp/>Time<sp/>Compare<sp/>(MTIMECMP)<sp/>Register<sp/>highest<sp/>32<sp/>bits.<sp/>Address<sp/>offset:<sp/>0x10</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint32_t<sp/>MTIMECMPH;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">}<sp/><ref refid="structMTimerController" kindref="compound">MTimerController</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Offset<sp/>of<sp/>the<sp/>Counter<sp/>Enable<sp/>(EN)<sp/>bit<sp/>of<sp/>the<sp/>MTIME<sp/>register</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MTIMER_CR_EN_OFFSET<sp/>0U</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Mask<sp/>used<sp/>to<sp/>read/set/clear<sp/>the<sp/>Counter<sp/>Enable<sp/>(EN)<sp/>bit<sp/>of<sp/>the<sp/>MTIME<sp/>register</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MTIMER_CR_EN_MASK<sp/>(0x1U<sp/>&lt;&lt;<sp/>MTIMER_CR_EN_OFFSET)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mtimer_enable(<ref refid="structMTimerController" kindref="compound">MTimerController</ref><sp/>*mtimer)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/>SET_FLAG(mtimer-&gt;CR,<sp/>MTIMER_CR_EN_MASK);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mtimer_disable(<ref refid="structMTimerController" kindref="compound">MTimerController</ref><sp/>*mtimer)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/>CLR_FLAG(mtimer-&gt;CR,<sp/>MTIMER_CR_EN_MASK);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mtimer_set_counter(<ref refid="structMTimerController" kindref="compound">MTimerController</ref><sp/>*mtimer,<sp/>uint64_t<sp/>new_value)</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/>mtimer-&gt;MTIMEL<sp/>=<sp/>new_value<sp/>&amp;<sp/>0xFFFFFFFF;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/>mtimer-&gt;MTIMEH<sp/>=<sp/>new_value<sp/>&gt;&gt;<sp/>32;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>uint64_t<sp/>mtimer_get_counter(<ref refid="structMTimerController" kindref="compound">MTimerController</ref><sp/>*mtimer)</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/>uint32_t<sp/>cnt_l<sp/>=<sp/>mtimer-&gt;MTIMEL;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/>uint64_t<sp/>cnt_h<sp/>=<sp/>mtimer-&gt;MTIMEH;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(cnt_h<sp/>&lt;&lt;<sp/>31)<sp/>|<sp/>cnt_l;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mtimer_clear_counter(<ref refid="structMTimerController" kindref="compound">MTimerController</ref><sp/>*mtimer)</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/>mtimer-&gt;MTIMEL<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/>mtimer-&gt;MTIMEH<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mtimer_set_compare(<ref refid="structMTimerController" kindref="compound">MTimerController</ref><sp/>*mtimer,<sp/>uint64_t<sp/>new_value)</highlight></codeline>
+<codeline lineno="100"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Writing<sp/>-1<sp/>to<sp/>MTIMECMPL,<sp/>writing<sp/>the<sp/>MSB<sp/>word<sp/>first<sp/>and<sp/>finally<sp/>writing<sp/>the<sp/>LSB<sp/>word<sp/>prevents</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/><sp/><sp/>*<sp/>spurious<sp/>interrupts<sp/>to<sp/>be<sp/>triggered<sp/>due<sp/>to<sp/>the<sp/>intermediate<sp/>value<sp/>held<sp/>by<sp/>the<sp/>register<sp/>during</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/><sp/><sp/>*<sp/>the<sp/>update.</highlight></codeline>
+<codeline lineno="104"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="105"><highlight class="comment"><sp/><sp/><sp/>*<sp/>See<sp/>RISC-V<sp/>Specifications,<sp/>v.2<sp/>(privileged<sp/>architecture)<sp/>pp.<sp/>45-46<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/>mtimer-&gt;MTIMECMPL<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/>mtimer-&gt;MTIMECMPH<sp/>=<sp/>new_value<sp/>&gt;&gt;<sp/>32;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/>mtimer-&gt;MTIMECMPL<sp/>=<sp/>new_value<sp/>&amp;<sp/>0xFFFFFFFF;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>__LIBSTEEL_MTIMER__</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/mtimer.h"/>
+  </compounddef>
+</doxygen>

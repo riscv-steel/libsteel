@@ -1,0 +1,541 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="globals_8h" kind="file" language="C++">
+    <compoundname>globals.h</compoundname>
+    <includes local="no">stdbool.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includedby refid="csr_8h" local="yes">include/csr.h</includedby>
+    <includedby refid="gpio_8h" local="yes">include/gpio.h</includedby>
+    <includedby refid="mtimer_8h" local="yes">include/mtimer.h</includedby>
+    <includedby refid="spi_8h" local="yes">include/spi.h</includedby>
+    <includedby refid="uart_8h" local="yes">include/uart.h</includedby>
+    <includedby refid="trap__handlers_8c" local="yes">source/trap_handlers.c</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>stdbool.h</label>
+      </node>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+      <node id="1">
+        <label>include/globals.h</label>
+        <link refid="globals_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="7">
+        <label>include/uart.h</label>
+        <link refid="uart_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>include/csr.h</label>
+        <link refid="csr_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/globals.h</label>
+        <link refid="globals_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>include/libsteel.h</label>
+        <link refid="libsteel_8h_source"/>
+      </node>
+      <node id="5">
+        <label>include/mtimer.h</label>
+        <link refid="mtimer_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>include/spi.h</label>
+        <link refid="spi_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>include/gpio.h</label>
+        <link refid="gpio_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="globals_8h_1a1378040bcf22428955c6e3ce9c2053cd" prot="public" static="no">
+        <name>__ASM</name>
+        <initializer>__asm</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/globals.h" line="15" column="9" bodyfile="include/globals.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="globals_8h_1a1b32538a4ba5f7f003a03c9fb815b45b" prot="public" static="no">
+        <name>__ASM_VOLATILE</name>
+        <initializer>__asm volatile</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/globals.h" line="19" column="9" bodyfile="include/globals.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="globals_8h_1ab904513442afdf77d4f8c74f23cbb040" prot="public" static="no">
+        <name>__STATIC_FORCEINLINE</name>
+        <initializer>__attribute__((always_inline)) static inline</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/globals.h" line="23" column="9" bodyfile="include/globals.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="globals_8h_1a153a4a31b276a9758959580538720a51" prot="public" static="no">
+        <name>__NO_RETURN</name>
+        <initializer>__attribute__((__noreturn__))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/globals.h" line="27" column="9" bodyfile="include/globals.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="globals_8h_1a3e40e4c553fc11588f7a4c2a19e789e0" prot="public" static="no">
+        <name>__USED</name>
+        <initializer>__attribute__((used))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/globals.h" line="31" column="9" bodyfile="include/globals.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="globals_8h_1a6c30d490cd2302ff05d355f3ec844c1f" prot="public" static="no">
+        <name>__UNUSED</name>
+        <initializer>__attribute__((unused))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/globals.h" line="35" column="9" bodyfile="include/globals.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="globals_8h_1ac607bf387b29162be6a9b77fc7999539" prot="public" static="no">
+        <name>__WEAK</name>
+        <initializer>__attribute__((weak))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/globals.h" line="39" column="9" bodyfile="include/globals.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="globals_8h_1afaf1f84f7d25a3702b24efe50ca3893f" prot="public" static="no">
+        <name>__NAKED</name>
+        <initializer>__attribute__((naked))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/globals.h" line="43" column="9" bodyfile="include/globals.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="globals_8h_1a3315928aa4b943cf8fa29c6b0dd5e75d" prot="public" static="no">
+        <name>__ALIAS</name>
+        <param><defname>weak_alias</defname></param>
+        <initializer>__attribute__((alias(weak_alias)))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/globals.h" line="47" column="9" bodyfile="include/globals.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="globals_8h_1a74c72f063ae223a1b32b91e48332371c" prot="public" static="no">
+        <name>__WEAK_ALIAS</name>
+        <param><defname>weak_alias</defname></param>
+        <initializer>__attribute__((weak, alias(weak_alias)))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/globals.h" line="51" column="9" bodyfile="include/globals.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="globals_8h_1a7938ff2796b0aa97ff470c3651fc86b9" prot="public" static="no">
+        <name>__ALIGNED_PACKED</name>
+        <param><defname>align</defname></param>
+        <initializer>__attribute__((packed, aligned(align)))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/globals.h" line="55" column="9" bodyfile="include/globals.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="globals_8h_1abe8996d3d985ee1529475443cc635bf1" prot="public" static="no">
+        <name>__PACKED</name>
+        <initializer>__attribute__((packed, aligned(1)))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/globals.h" line="59" column="9" bodyfile="include/globals.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="globals_8h_1a4dbb70fab85207c27b581ecb6532b314" prot="public" static="no">
+        <name>__PACKED_STRUCT</name>
+        <initializer>struct __attribute__((packed, aligned(1)))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/globals.h" line="63" column="9" bodyfile="include/globals.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="globals_8h_1a6fba34d08b0a526830b4231d2ea0b89a" prot="public" static="no">
+        <name>__PACKED_UNION</name>
+        <initializer>union __attribute__((packed, aligned(1)))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/globals.h" line="67" column="9" bodyfile="include/globals.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="globals_8h_1a685dda98fcc125d6c75a657bb54a0fd2" prot="public" static="no">
+        <name>__IRQ_M</name>
+        <param><defname>vector</defname></param>
+        <initializer>__attribute__((interrupt(&quot;machine&quot;))) void vector(void)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/globals.h" line="71" column="9" bodyfile="include/globals.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="globals_8h_1a7828900937ee25ddbe60e032cc2dea6a" prot="public" static="no">
+        <name>__IRQ_M_WEAK</name>
+        <param><defname>vector</defname></param>
+        <initializer>__attribute__((weak, interrupt(&quot;machine&quot;))) void vector(void)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/globals.h" line="75" column="9" bodyfile="include/globals.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="globals_8h_1a43a91d2973178bf0cbd1b73521d6dd10" prot="public" static="no">
+        <name>__IRQ_M_WEAK_DEFAULT</name>
+        <param><defname>vector</defname></param>
+        <initializer>__WEAK_ALIAS(&quot;default_handler&quot;) void vector(void)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/globals.h" line="79" column="9" bodyfile="include/globals.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="globals_8h_1a0b13f3617dd4af2cd2eb3a311073f717" prot="public" static="no">
+        <name>__NOP</name>
+        <param></param>
+        <initializer>__ASM_VOLATILE(&quot;nop&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/globals.h" line="82" column="9" bodyfile="include/globals.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="globals_8h_1ad696e4ed4fc886cc520b730f4ae3a07c" prot="public" static="no">
+        <name>__ECALL</name>
+        <param></param>
+        <initializer>__ASM_VOLATILE(&quot;ecall&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/globals.h" line="84" column="9" bodyfile="include/globals.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="globals_8h_1ac480d100da923bdf27a30ace8b1ef6a5" prot="public" static="no">
+        <name>__EBREAK</name>
+        <param></param>
+        <initializer>__ASM_VOLATILE(&quot;ebreak&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/globals.h" line="86" column="9" bodyfile="include/globals.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="globals_8h_1a01f50bfcef4abc479176d07dfb3f958e" prot="public" static="no">
+        <name>SET_FLAG</name>
+        <param><defname>REG</defname></param>
+        <param><defname>FLAG</defname></param>
+        <initializer>((REG) |= (FLAG))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/globals.h" line="88" column="9" bodyfile="include/globals.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="globals_8h_1a5b5759c1dda59c60c30b01d3af7181c9" prot="public" static="no">
+        <name>CLR_FLAG</name>
+        <param><defname>REG</defname></param>
+        <param><defname>FLAG</defname></param>
+        <initializer>((REG) &amp;= ~(FLAG))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/globals.h" line="90" column="9" bodyfile="include/globals.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="globals_8h_1a93e509b60278aeb43d25c45a562676ed" prot="public" static="no">
+        <name>INV_FLAG</name>
+        <param><defname>REG</defname></param>
+        <param><defname>FLAG</defname></param>
+        <initializer>((REG) ^= (FLAG))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/globals.h" line="92" column="9" bodyfile="include/globals.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="globals_8h_1a26474f43799fbade9cf300e21dd3a91a" prot="public" static="no">
+        <name>SET_BIT</name>
+        <param><defname>REG</defname></param>
+        <param><defname>BIT</defname></param>
+        <initializer>((REG) |= (1 &lt;&lt; (BIT)))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/globals.h" line="94" column="9" bodyfile="include/globals.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="globals_8h_1a96fae2c0e48fd3f85b2438aa61ba4550" prot="public" static="no">
+        <name>CLR_BIT</name>
+        <param><defname>REG</defname></param>
+        <param><defname>BIT</defname></param>
+        <initializer>((REG) &amp;= ~(1 &lt;&lt; (BIT)))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/globals.h" line="96" column="9" bodyfile="include/globals.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="globals_8h_1a2b58edf9d3ba6a815ae99e5ccbbd3913" prot="public" static="no">
+        <name>INV_BIT</name>
+        <param><defname>REG</defname></param>
+        <param><defname>BIT</defname></param>
+        <initializer>((REG) ^= (1 &lt;&lt; (BIT)))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/globals.h" line="98" column="9" bodyfile="include/globals.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="globals_8h_1a822bb1bb9710d5f2fa6396b84e583c33" prot="public" static="no">
+        <name>READ_BIT</name>
+        <param><defname>REG</defname></param>
+        <param><defname>BIT</defname></param>
+        <initializer>(((REG) &gt;&gt; BIT) &amp; 1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/globals.h" line="100" column="9" bodyfile="include/globals.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="globals_8h_1a6553c99f510c3bab8cc0a91602053247" prot="public" static="no">
+        <name>MODIFY_REG</name>
+        <param><defname>REG</defname></param>
+        <param><defname>CLEARMASK</defname></param>
+        <param><defname>SETMASK</defname></param>
+        <initializer>((REG) = (REG &amp; (~(CLEARMASK))) | (SETMASK))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/globals.h" line="102" column="9" bodyfile="include/globals.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="globals_8h_1ac7d66582356d9ec46dd1688d9a7a1af0" prot="public" static="no">
+        <name>NUMBER_OF</name>
+        <param><defname>a</defname></param>
+        <initializer>(sizeof a / sizeof a[0])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/globals.h" line="104" column="9" bodyfile="include/globals.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2020-2024<sp/>RISC-V<sp/>Steel<sp/>contributors</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>work<sp/>is<sp/>licensed<sp/>under<sp/>the<sp/>MIT<sp/>License,<sp/>see<sp/>LICENSE<sp/>file<sp/>for<sp/>details.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>MIT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__LIBSTEEL_GLOBALS__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__LIBSTEEL_GLOBALS__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__ASM</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__ASM<sp/>__asm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__ASM_VOLATILE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__ASM_VOLATILE<sp/>__asm<sp/>volatile</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__STATIC_FORCEINLINE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__STATIC_FORCEINLINE<sp/>__attribute__((always_inline))<sp/>static<sp/>inline</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__NO_RETURN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__NO_RETURN<sp/>__attribute__((__noreturn__))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__USED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__USED<sp/>__attribute__((used))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__UNUSED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__UNUSED<sp/>__attribute__((unused))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__WEAK</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__WEAK<sp/>__attribute__((weak))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__NAKED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__NAKED<sp/>__attribute__((naked))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__ALIAS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__ALIAS(weak_alias)<sp/>__attribute__((alias(weak_alias)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__WEAK_ALIAS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__WEAK_ALIAS(weak_alias)<sp/>__attribute__((weak,<sp/>alias(weak_alias)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__ALIGNED_PACKED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__ALIGNED_PACKED(align)<sp/>__attribute__((packed,<sp/>aligned(align)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__PACKED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__PACKED<sp/>__attribute__((packed,<sp/>aligned(1)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__PACKED_STRUCT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__PACKED_STRUCT<sp/>struct<sp/>__attribute__((packed,<sp/>aligned(1)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__PACKED_UNION</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__PACKED_UNION<sp/>union<sp/>__attribute__((packed,<sp/>aligned(1)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__IRQ_M</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__IRQ_M(vector)<sp/>__attribute__((interrupt(&quot;machine&quot;</highlight><highlight class="normal">)))<sp/>void<sp/>vector(void)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__IRQ_M_WEAK</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__IRQ_M_WEAK(vector)<sp/>__attribute__((weak,<sp/>interrupt(&quot;machine&quot;</highlight><highlight class="normal">)))<sp/>void<sp/>vector(void)</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__IRQ_M_WEAK_DEFAULT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__IRQ_M_WEAK_DEFAULT(vector)<sp/>__WEAK_ALIAS(&quot;default_handler&quot;</highlight><highlight class="normal">)<sp/>void<sp/>vector(void)</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__NOP()<sp/>__ASM_VOLATILE(&quot;nop&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__ECALL()<sp/>__ASM_VOLATILE(&quot;ecall&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__EBREAK()<sp/>__ASM_VOLATILE(&quot;ebreak&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SET_FLAG(REG,<sp/>FLAG)<sp/>((REG)<sp/>|=<sp/>(FLAG))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CLR_FLAG(REG,<sp/>FLAG)<sp/>((REG)<sp/>&amp;=<sp/>~(FLAG))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INV_FLAG(REG,<sp/>FLAG)<sp/>((REG)<sp/>^=<sp/>(FLAG))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SET_BIT(REG,<sp/>BIT)<sp/>((REG)<sp/>|=<sp/>(1<sp/>&lt;&lt;<sp/>(BIT)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CLR_BIT(REG,<sp/>BIT)<sp/>((REG)<sp/>&amp;=<sp/>~(1<sp/>&lt;&lt;<sp/>(BIT)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INV_BIT(REG,<sp/>BIT)<sp/>((REG)<sp/>^=<sp/>(1<sp/>&lt;&lt;<sp/>(BIT)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>READ_BIT(REG,<sp/>BIT)<sp/>(((REG)<sp/>&gt;&gt;<sp/>BIT)<sp/>&amp;<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MODIFY_REG(REG,<sp/>CLEARMASK,<sp/>SETMASK)<sp/>((REG)<sp/>=<sp/>(REG<sp/>&amp;<sp/>(~(CLEARMASK)))<sp/>|<sp/>(SETMASK))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NUMBER_OF(a)<sp/>(sizeof<sp/>a<sp/>/<sp/>sizeof<sp/>a[0])</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>__LIBSTEEL_GLOBALS__</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/globals.h"/>
+  </compounddef>
+</doxygen>

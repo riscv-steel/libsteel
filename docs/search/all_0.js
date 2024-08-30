@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gpiocontroller_0',['GpioController',['../structGpioController.html',1,'']]]
+  ['developer_20guide_0',['Developer Guide',['../dev-guide.html',1,'']]]
 ];

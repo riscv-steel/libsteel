@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>LibSteel: Main Page</title>
+<title>LibSteel Docs: LibSteel Docs</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -18,6 +18,7 @@
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -25,10 +26,12 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="rvsteel_logo_circle.svg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">LibSteel
-   &#160;<span id="projectnumber">v1.1</span>
+   <div id="projectname">LibSteel Docs
+   &#160;<span id="projectnumber">v2.1</span>
    </div>
+   <div id="projectbrief">RISC-V Steel API</div>
   </td>
  </tr>
  </tbody>
@@ -82,11 +85,28 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </iframe>
 </div>
 
-<div class="header">
+<div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">LibSteel Documentation</div>  </div>
+<div class="title">LibSteel Docs </div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><b>Welcome to LibSteel documentation page.</b></p>
+<p>LibSteel is a software library providing an API for controlling RISC-V Steel peripheral devices (UART, GPIO, SPI, and timer), handling interrupts and exceptions, and reading/writing the control and status registers of its processor core.</p>
+<ul>
+<li>New to RISC-V Steel? Check the <a href="https://riscv-steel.github.io/riscv-steel/gettingstarted/">Getting Started Guide</a>.</li>
+<li>See the <a class="el" href="dev-guide.html">Developer Guide</a> to learn how to start a new software project for RISC-V Steel from examples.</li>
+<li>For hardware-specific documentation, see the <a href="https://riscv-steel.github.io/riscv-steel/">Hardware Docs</a>.</li>
+</ul>
+<p>You find the documentation for LibSteel grouped by feature:</p>
+<ul>
+<li>UART Controller</li>
+<li>SPI Controller</li>
+<li>General Purpose Input/Output (GPIO)</li>
+<li>Timer</li>
+<li>Control and Status Registers</li>
+<li>Interrupt handling </li>
+</ul>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="trap__handlers_8c" kind="file" language="C++">
+    <compoundname>trap_handlers.c</compoundname>
+    <includes refid="globals_8h" local="yes">globals.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>stdbool.h</label>
+      </node>
+      <node id="4">
+        <label>stdint.h</label>
+      </node>
+      <node id="1">
+        <label>source/trap_handlers.c</label>
+        <link refid="trap__handlers_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>globals.h</label>
+        <link refid="globals_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="trap__handlers_8c_1ad897bfc4fe5c3b0c2ad7f6ad21bdc38e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>__NAKED void</type>
+        <definition>__NAKED void rvsteel_return_from_trap</definition>
+        <argsstring>()</argsstring>
+        <name>rvsteel_return_from_trap</name>
+        <briefdescription>
+<para>Return from trap handler. Write to the Machine Interrupt Enable bit of the MSTATUS CSR the value saved in the Machine Prior Interrupt Enable bit. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/trap_handlers.c" line="15" column="14" bodyfile="source/trap_handlers.c" bodystart="15" bodyend="18"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2020-2024<sp/>RISC-V<sp/>Steel<sp/>contributors</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>work<sp/>is<sp/>licensed<sp/>under<sp/>the<sp/>MIT<sp/>License,<sp/>see<sp/>LICENSE<sp/>file<sp/>for<sp/>details.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>MIT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;globals.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">__NAKED<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>rvsteel_return_from_trap()</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/>__ASM_VOLATILE(</highlight><highlight class="stringliteral">&quot;mret&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Unless<sp/>explicitly<sp/>implemented<sp/>by<sp/>the<sp/>user,<sp/>a<sp/>trap<sp/>simply<sp/>returns.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">__WEAK_ALIAS(</highlight><highlight class="stringliteral">&quot;rvsteel_return_from_trap&quot;</highlight><highlight class="normal">)<sp/>void<sp/>default_trap_handler();</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">__WEAK_ALIAS(&quot;rvsteel_return_from_trap&quot;)<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>msi_irq_handler();</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">__WEAK_ALIAS(&quot;rvsteel_return_from_trap&quot;)<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mti_irq_handler();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">__WEAK_ALIAS(&quot;rvsteel_return_from_trap&quot;)<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mei_irq_handler();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">__WEAK_ALIAS(&quot;rvsteel_return_from_trap&quot;)<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fast0_irq_handler();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">__WEAK_ALIAS(&quot;rvsteel_return_from_trap&quot;)<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fast1_irq_handler();</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">__WEAK_ALIAS(&quot;rvsteel_return_from_trap&quot;)<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fast2_irq_handler();</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">__WEAK_ALIAS(&quot;rvsteel_return_from_trap&quot;)<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fast3_irq_handler();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">__WEAK_ALIAS(&quot;rvsteel_return_from_trap&quot;)<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fast4_irq_handler();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">__WEAK_ALIAS(&quot;rvsteel_return_from_trap&quot;)<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fast5_irq_handler();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">__WEAK_ALIAS(&quot;rvsteel_return_from_trap&quot;)<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fast6_irq_handler();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">__WEAK_ALIAS(&quot;rvsteel_return_from_trap&quot;)<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fast7_irq_handler();</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">__WEAK_ALIAS(&quot;rvsteel_return_from_trap&quot;)<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fast8_irq_handler();</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">__WEAK_ALIAS(&quot;rvsteel_return_from_trap&quot;)<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fast9_irq_handler();</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">__WEAK_ALIAS(&quot;rvsteel_return_from_trap&quot;)<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fast10_irq_handler();</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">__WEAK_ALIAS(&quot;rvsteel_return_from_trap&quot;)<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fast11_irq_handler();</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">__WEAK_ALIAS(&quot;rvsteel_return_from_trap&quot;)<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fast12_irq_handler();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">__WEAK_ALIAS(&quot;rvsteel_return_from_trap&quot;)<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fast13_irq_handler();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">__WEAK_ALIAS(&quot;rvsteel_return_from_trap&quot;)<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fast14_irq_handler();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">__WEAK_ALIAS(&quot;rvsteel_return_from_trap&quot;)<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fast15_irq_handler();</highlight></codeline>
+    </programlisting>
+    <location file="source/trap_handlers.c"/>
+  </compounddef>
+</doxygen>

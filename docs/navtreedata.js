@@ -24,14 +24,22 @@
 */
 var NAVTREE =
 [
-  [ "LibSteel", "index.html", [
+  [ "LibSteel Docs", "index.html", [
+    [ "Developer Guide", "dev-guide.html", [
+      [ "Introduction", "dev-guide.html#devintro", null ],
+      [ "Start from the examples", "dev-guide.html#newproject", null ],
+      [ "Edit the project settings", "dev-guide.html#edit-settings", null ],
+      [ "Write your application", "dev-guide.html#write-app", null ],
+      [ "Build and run", "dev-guide.html#build-and-run", null ]
+    ] ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Structure Index", "classes.html", null ]
     ] ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ]
-    ] ]
+    ] ],
+    [ "Hardware Docs", "^https://riscv-steel.github.io/riscv-steel/", null ]
   ] ]
 ];
 

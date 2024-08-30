@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mtimercontroller_1',['MTimerController',['../structMTimerController.html',1,'']]]
+  ['gpiocontroller_1',['GpioController',['../structGpioController.html',1,'']]]
 ];

@@ -1,0 +1,755 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="spi_8h" kind="file" language="C++">
+    <compoundname>spi.h</compoundname>
+    <includes refid="globals_8h" local="yes">globals.h</includes>
+    <includedby refid="libsteel_8h" local="yes">include/libsteel.h</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>stdbool.h</label>
+      </node>
+      <node id="4">
+        <label>stdint.h</label>
+      </node>
+      <node id="2">
+        <label>globals.h</label>
+        <link refid="globals_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/spi.h</label>
+        <link refid="spi_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>include/libsteel.h</label>
+        <link refid="libsteel_8h_source"/>
+      </node>
+      <node id="1">
+        <label>include/spi.h</label>
+        <link refid="spi_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structSpiController" prot="public">SpiController</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="spi_8h_1a2db784da2e3e41534ab2dbdd58851b2f" prot="public" static="no" strong="no">
+        <type></type>
+        <name>SpiMode</name>
+        <enumvalue id="spi_8h_1a2db784da2e3e41534ab2dbdd58851b2fa41ba788b71883c2bddc08e56ba4bf866" prot="public">
+          <name>SPI_MODE0_CPOL0_CPHA0</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="spi_8h_1a2db784da2e3e41534ab2dbdd58851b2fa75e5af4be5a52570e274605310cd50c8" prot="public">
+          <name>SPI_MODE1_CPOL0_CPHA1</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="spi_8h_1a2db784da2e3e41534ab2dbdd58851b2faf839ba1545edaa773a9161adf39110ad" prot="public">
+          <name>SPI_MODE2_CPOL1_CPHA0</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="spi_8h_1a2db784da2e3e41534ab2dbdd58851b2fa449a992f741f3e40c4215592b62d9b95" prot="public">
+          <name>SPI_MODE3_CPOL1_CPHA1</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/spi.h" line="18" column="1" bodyfile="include/spi.h" bodystart="19" bodyend="28"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="spi_8h_1aae3542b74033e79b46e1bcef7b60519b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void spi_set_cpol</definition>
+        <argsstring>(SpiController *spi, const uint8_t cpol)</argsstring>
+        <name>spi_set_cpol</name>
+        <param>
+          <type><ref refid="structSpiController" kindref="compound">SpiController</ref> *</type>
+          <declname>spi</declname>
+        </param>
+        <param>
+          <type>const uint8_t</type>
+          <declname>cpol</declname>
+        </param>
+        <briefdescription>
+<para>Set the clock polarity of the SPI Controller. An attempt to set CPOL to a value other than 0 or 1 is gracefully ignored (no errors are given). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>spi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the <ref refid="structSpiController" kindref="compound">SpiController</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cpol</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new clock polarity. Legal values are either 0 or 1. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/spi.h" line="37" column="13" bodyfile="include/spi.h" bodystart="37" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="spi_8h_1a4fc1b7c06ed816fbbb1abb72d063114a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void spi_set_cpha</definition>
+        <argsstring>(SpiController *spi, const uint8_t cpha)</argsstring>
+        <name>spi_set_cpha</name>
+        <param>
+          <type><ref refid="structSpiController" kindref="compound">SpiController</ref> *</type>
+          <declname>spi</declname>
+        </param>
+        <param>
+          <type>const uint8_t</type>
+          <declname>cpha</declname>
+        </param>
+        <briefdescription>
+<para>Set the clock phase of the SPI Controller. An attempt to set CPHA to a value other than 0 or 1 is gracefully ignored (no errors are given). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>spi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the <ref refid="structSpiController" kindref="compound">SpiController</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cpha</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new clock phase. Legal values are either 0 or 1. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/spi.h" line="50" column="13" bodyfile="include/spi.h" bodystart="50" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="spi_8h_1adbd90238cd4047aca66340f7ca9f008c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t spi_get_cpol</definition>
+        <argsstring>(SpiController *spi)</argsstring>
+        <name>spi_get_cpol</name>
+        <param>
+          <type><ref refid="structSpiController" kindref="compound">SpiController</ref> *</type>
+          <declname>spi</declname>
+        </param>
+        <briefdescription>
+<para>Read the clock polarity (CPOL) register of the SPI Controller. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>spi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the <ref refid="structSpiController" kindref="compound">SpiController</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 </para>
+</simplesect>
+<simplesect kind="return"><para>1 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/spi.h" line="63" column="17" bodyfile="include/spi.h" bodystart="63" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="spi_8h_1aa2679265e04093c4939da9622c3bc658" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t spi_get_cpha</definition>
+        <argsstring>(SpiController *spi)</argsstring>
+        <name>spi_get_cpha</name>
+        <param>
+          <type><ref refid="structSpiController" kindref="compound">SpiController</ref> *</type>
+          <declname>spi</declname>
+        </param>
+        <briefdescription>
+<para>Read the clock phase (CPHA) register of the SPI Controller. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>spi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the <ref refid="structSpiController" kindref="compound">SpiController</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 </para>
+</simplesect>
+<simplesect kind="return"><para>1 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/spi.h" line="75" column="17" bodyfile="include/spi.h" bodystart="75" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="spi_8h_1ad68109943129dfc75ae926b922c8aa80" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void spi_set_mode</definition>
+        <argsstring>(SpiController *spi, enum SpiMode mode)</argsstring>
+        <name>spi_set_mode</name>
+        <param>
+          <type><ref refid="structSpiController" kindref="compound">SpiController</ref> *</type>
+          <declname>spi</declname>
+        </param>
+        <param>
+          <type>enum SpiMode</type>
+          <declname>mode</declname>
+        </param>
+        <briefdescription>
+<para>Set the SPI device to operate on a given mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The four possible modes are:</para>
+<para><itemizedlist>
+<listitem><para>MODE 0: equivalent to CPOL=0 and CPHA=0</para>
+</listitem><listitem><para>MODE 1: equivalent to CPOL=0 and CPHA=1</para>
+</listitem><listitem><para>MODE 2: equivalent to CPOL=1 and CPHA=0</para>
+</listitem><listitem><para>MODE 3: equivalent to CPOL=1 and CPHA=1</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>spi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the <ref refid="structSpiController" kindref="compound">SpiController</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The operation mode, chosen from <computeroutput>enum SpiMode.</computeroutput> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/spi.h" line="93" column="13" bodyfile="include/spi.h" bodystart="93" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="spi_8h_1ae1757c123b5ca913544d7315b1ef9898" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>enum SpiMode</type>
+        <definition>enum SpiMode spi_get_mode</definition>
+        <argsstring>(SpiController *spi)</argsstring>
+        <name>spi_get_mode</name>
+        <param>
+          <type><ref refid="structSpiController" kindref="compound">SpiController</ref> *</type>
+          <declname>spi</declname>
+        </param>
+        <briefdescription>
+<para>Read the current SPI operation mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>spi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the <ref refid="structSpiController" kindref="compound">SpiController</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>enum SpiMode </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/spi.h" line="93" column="13" bodyfile="include/spi.h" bodystart="124" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="spi_8h_1ad7a069ab9176fa6101a7a6aad2024426" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void spi_select</definition>
+        <argsstring>(SpiController *spi, const uint8_t peripheral_id)</argsstring>
+        <name>spi_select</name>
+        <param>
+          <type><ref refid="structSpiController" kindref="compound">SpiController</ref> *</type>
+          <declname>spi</declname>
+        </param>
+        <param>
+          <type>const uint8_t</type>
+          <declname>peripheral_id</declname>
+        </param>
+        <briefdescription>
+<para>Select an SPI peripheral by deasserting the Chip Select (CHIP_SELECT) line connected to it. An attempt to select a non-existent SPI peripheral is gracefully ignored (no errors are given). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>spi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the <ref refid="structSpiController" kindref="compound">SpiController</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>peripheral_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ID of the SPI peripheral to select. Note that peripheral IDs start at 0. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/spi.h" line="137" column="13" bodyfile="include/spi.h" bodystart="137" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="spi_8h_1a2b25f6c77acc2e4cf7cca6661de5f7d3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void spi_deselect</definition>
+        <argsstring>(SpiController *spi)</argsstring>
+        <name>spi_deselect</name>
+        <param>
+          <type><ref refid="structSpiController" kindref="compound">SpiController</ref> *</type>
+          <declname>spi</declname>
+        </param>
+        <briefdescription>
+<para>Deselect SPI peripherals by asserting all Chip Select (CHIP_SELECT) lines. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>spi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the <ref refid="structSpiController" kindref="compound">SpiController</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/spi.h" line="147" column="13" bodyfile="include/spi.h" bodystart="147" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="spi_8h_1a6c0bc38bfae092f051e9b156c7155e1f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t spi_get_cs</definition>
+        <argsstring>(SpiController *spi)</argsstring>
+        <name>spi_get_cs</name>
+        <param>
+          <type><ref refid="structSpiController" kindref="compound">SpiController</ref> *</type>
+          <declname>spi</declname>
+        </param>
+        <briefdescription>
+<para>Return the ID of the SPI peripheral currently selected, or <computeroutput>0xff</computeroutput> if no peripheral is selected. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>spi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the <ref refid="structSpiController" kindref="compound">SpiController</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>uint8_t </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/spi.h" line="159" column="16" bodyfile="include/spi.h" bodystart="159" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="spi_8h_1ac1a76a05e7abbcf03dfb7b4460035758" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool spi_is_ready</definition>
+        <argsstring>(SpiController *spi)</argsstring>
+        <name>spi_is_ready</name>
+        <param>
+          <type><ref refid="structSpiController" kindref="compound">SpiController</ref> *</type>
+          <declname>spi</declname>
+        </param>
+        <briefdescription>
+<para>Check whether the SPI controller is ready to read/write data. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>spi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the <ref refid="structSpiController" kindref="compound">SpiController</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/spi.h" line="169" column="13" bodyfile="include/spi.h" bodystart="169" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="spi_8h_1a818f56f42e8269ad1c5bd4b86c4b30f7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void spi_wait_ready</definition>
+        <argsstring>(SpiController *spi)</argsstring>
+        <name>spi_wait_ready</name>
+        <param>
+          <type><ref refid="structSpiController" kindref="compound">SpiController</ref> *</type>
+          <declname>spi</declname>
+        </param>
+        <briefdescription>
+<para>Wait until the SPI controller is ready to read/write data. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>spi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the <ref refid="structSpiController" kindref="compound">SpiController</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/spi.h" line="179" column="13" bodyfile="include/spi.h" bodystart="179" bodyend="183"/>
+      </memberdef>
+      <memberdef kind="function" id="spi_8h_1aa88dab3c4a26ef52c4d092876aae8153" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void spi_set_clock</definition>
+        <argsstring>(SpiController *spi, const uint8_t conf)</argsstring>
+        <name>spi_set_clock</name>
+        <param>
+          <type><ref refid="structSpiController" kindref="compound">SpiController</ref> *</type>
+          <declname>spi</declname>
+        </param>
+        <param>
+          <type>const uint8_t</type>
+          <declname>conf</declname>
+        </param>
+        <briefdescription>
+<para>Set the frequency of the SCLK pin of the SPI Controller. The frequency of the SCLK pin is equal to the frequency of the <computeroutput>clock</computeroutput> pin divided by a factor of <computeroutput>2*(conf + 1)</computeroutput>, where <computeroutput>conf</computeroutput> is the value provided in the <computeroutput>conf</computeroutput> argument. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The maximum frequency of SCLK is half the frequency of the system <computeroutput>clock</computeroutput> pin, equivalent to <computeroutput>conf = 0</computeroutput>. The minimum frequency is 1/512, equivalent to <computeroutput>conf = 255</computeroutput>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>spi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the <ref refid="structSpiController" kindref="compound">SpiController</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>conf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Configuration value for the SCLK pin. The frequency of the <computeroutput>clock</computeroutput> pin is divided by a factor equal to <computeroutput>2*(conf + 1)</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/spi.h" line="197" column="13" bodyfile="include/spi.h" bodystart="197" bodyend="200"/>
+      </memberdef>
+      <memberdef kind="function" id="spi_8h_1a91d7a6fd4dfe2b97f2fcbe0203667db6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t spi_get_clock</definition>
+        <argsstring>(SpiController *spi)</argsstring>
+        <name>spi_get_clock</name>
+        <param>
+          <type><ref refid="structSpiController" kindref="compound">SpiController</ref> *</type>
+          <declname>spi</declname>
+        </param>
+        <briefdescription>
+<para>Read the configuration of the clock register (CLOCK_CONF). Based on the return value of this function, the frequency of the SCLK pin can be calculated as: <computeroutput>SCLKf = clockf / (2 * (conf + 1))</computeroutput>, where <computeroutput>conf</computeroutput> is the value returned. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>spi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the <ref refid="structSpiController" kindref="compound">SpiController</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>uint8_t </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/spi.h" line="210" column="16" bodyfile="include/spi.h" bodystart="210" bodyend="213"/>
+      </memberdef>
+      <memberdef kind="function" id="spi_8h_1a33521c66795960df68ec21d703e1e24b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void spi_write</definition>
+        <argsstring>(SpiController *spi, const uint8_t wdata)</argsstring>
+        <name>spi_write</name>
+        <param>
+          <type><ref refid="structSpiController" kindref="compound">SpiController</ref> *</type>
+          <declname>spi</declname>
+        </param>
+        <param>
+          <type>const uint8_t</type>
+          <declname>wdata</declname>
+        </param>
+        <briefdescription>
+<para>Send a byte to the selected SPI peripheral and awaits until the transfer is complete. The value received over the POCI pin is ignored. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>spi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the <ref refid="structSpiController" kindref="compound">SpiController</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>wdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The byte to be sent. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/spi.h" line="222" column="13" bodyfile="include/spi.h" bodystart="222" bodyend="226"/>
+      </memberdef>
+      <memberdef kind="function" id="spi_8h_1a05754efe1f617eb475d740fed523789b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t spi_transfer</definition>
+        <argsstring>(SpiController *spi, const uint8_t wdata)</argsstring>
+        <name>spi_transfer</name>
+        <param>
+          <type><ref refid="structSpiController" kindref="compound">SpiController</ref> *</type>
+          <declname>spi</declname>
+        </param>
+        <param>
+          <type>const uint8_t</type>
+          <declname>wdata</declname>
+        </param>
+        <briefdescription>
+<para>Send a byte to the selected SPI peripheral and awaits until the transfer is complete. The value received over the POCI pin during the transfer is returned.. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>spi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the <ref refid="structSpiController" kindref="compound">SpiController</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>wdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The byte to be sent. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/spi.h" line="235" column="16" bodyfile="include/spi.h" bodystart="235" bodyend="240"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>__LIBSTEEL_SPI__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__LIBSTEEL_SPI__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;globals.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Struct<sp/>providing<sp/>access<sp/>to<sp/>RISC-V<sp/>Steel<sp/>SPI<sp/>Device<sp/>registers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="structSpiController" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint32_t<sp/>CPOL;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Clock<sp/>Polarity<sp/>(CPOL)<sp/>register.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Address<sp/>offset:<sp/>0x00.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint32_t<sp/>CPHA;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Clock<sp/>Phase<sp/>(CPHA)<sp/>register.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Address<sp/>offset:<sp/>0x04.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint32_t<sp/>CHIP_SELECT;<sp/></highlight><highlight class="comment">//<sp/>Chip<sp/>Select<sp/>(CHIP_SELECT)<sp/>register.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Address<sp/>offset:<sp/>0x08.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint32_t<sp/>CLOCK_CONF;<sp/><sp/></highlight><highlight class="comment">//<sp/>Clock<sp/>Configuration<sp/>(CLOCK_CONF)<sp/>register.<sp/>Address<sp/>offset:<sp/>0x0c.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint32_t<sp/>WDATA;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Write<sp/>Data<sp/>(WDATA)<sp/>register.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Address<sp/>offset:<sp/>0x10.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint32_t<sp/>RDATA;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Read<sp/>Data<sp/>(RDATA)<sp/>register.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Address<sp/>offset:<sp/>0x14.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint32_t<sp/>BUSY;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Busy<sp/>register.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Address<sp/>offset:<sp/>0x18.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">}<sp/><ref refid="structSpiController" kindref="compound">SpiController</ref>;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>SpiMode</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>SPI<sp/>Mode<sp/>0,<sp/>equivalent<sp/>to<sp/>CPOL=0<sp/>CPHA=0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/>SPI_MODE0_CPOL0_CPHA0<sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>SPI<sp/>Mode<sp/>1,<sp/>equivalent<sp/>to<sp/>CPOL=0<sp/>CPHA=1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/>SPI_MODE1_CPOL0_CPHA1<sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>SPI<sp/>Mode<sp/>2,<sp/>equivalent<sp/>to<sp/>CPOL=1<sp/>CPHA=0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/>SPI_MODE2_CPOL1_CPHA0<sp/>=<sp/>2,</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>SPI<sp/>Mode<sp/>3,<sp/>equivalent<sp/>to<sp/>CPOL=1<sp/>CPHA=1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/>SPI_MODE3_CPOL1_CPHA1<sp/>=<sp/>3</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>spi_set_cpol(<ref refid="structSpiController" kindref="compound">SpiController</ref><sp/>*spi,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>cpol)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cpol<sp/>&lt;=<sp/>1)</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>spi-&gt;CPOL<sp/>=<sp/>cpol;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>spi_set_cpha(<ref refid="structSpiController" kindref="compound">SpiController</ref><sp/>*spi,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>cpha)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cpha<sp/>&lt;=<sp/>1)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>spi-&gt;CPHA<sp/>=<sp/>cpha;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>uint32_t<sp/>spi_get_cpol(<ref refid="structSpiController" kindref="compound">SpiController</ref><sp/>*spi)</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>spi-&gt;CPOL;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>uint32_t<sp/>spi_get_cpha(<ref refid="structSpiController" kindref="compound">SpiController</ref><sp/>*spi)</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>spi-&gt;CPHA;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>spi_set_mode(<ref refid="structSpiController" kindref="compound">SpiController</ref><sp/>*spi,<sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>SpiMode<sp/>mode)</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(mode)</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>SPI_MODE0_CPOL0_CPHA0:</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>spi_set_cpol(spi,<sp/>0);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>spi_set_cpha(spi,<sp/>0);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>SPI_MODE1_CPOL0_CPHA1:</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>spi_set_cpol(spi,<sp/>0);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>spi_set_cpha(spi,<sp/>1);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>SPI_MODE2_CPOL1_CPHA0:</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>spi_set_cpol(spi,<sp/>1);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>spi_set_cpha(spi,<sp/>0);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>SPI_MODE3_CPOL1_CPHA1:</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>spi_set_cpol(spi,<sp/>1);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>spi_set_cpha(spi,<sp/>1);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>SpiMode<sp/>spi_get_mode(<ref refid="structSpiController" kindref="compound">SpiController</ref><sp/>*spi)</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>((</highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>SpiMode)((spi-&gt;CPHA<sp/>&lt;&lt;<sp/>1)<sp/>|<sp/>spi-&gt;CPOL));</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>spi_select(<ref refid="structSpiController" kindref="compound">SpiController</ref><sp/>*spi,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>peripheral_id)</highlight></codeline>
+<codeline lineno="138"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/>spi-&gt;CHIP_SELECT<sp/>=<sp/>peripheral_id;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>spi_deselect(<ref refid="structSpiController" kindref="compound">SpiController</ref><sp/>*spi)</highlight></codeline>
+<codeline lineno="148"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/>spi-&gt;CHIP_SELECT<sp/>=<sp/>0xffffffff;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>uint8_t<sp/>spi_get_cs(<ref refid="structSpiController" kindref="compound">SpiController</ref><sp/>*spi)</highlight></codeline>
+<codeline lineno="160"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>spi-&gt;CHIP_SELECT;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>spi_is_ready(<ref refid="structSpiController" kindref="compound">SpiController</ref><sp/>*spi)</highlight></codeline>
+<codeline lineno="170"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>spi-&gt;BUSY<sp/>==<sp/>0;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>spi_wait_ready(<ref refid="structSpiController" kindref="compound">SpiController</ref><sp/>*spi)</highlight></codeline>
+<codeline lineno="180"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(!spi_is_ready(spi))</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>spi_set_clock(<ref refid="structSpiController" kindref="compound">SpiController</ref><sp/>*spi,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>conf)</highlight></codeline>
+<codeline lineno="198"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/>spi-&gt;CLOCK_CONF<sp/>=<sp/>conf;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>uint8_t<sp/>spi_get_clock(<ref refid="structSpiController" kindref="compound">SpiController</ref><sp/>*spi)</highlight></codeline>
+<codeline lineno="211"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>spi-&gt;CLOCK_CONF;</highlight></codeline>
+<codeline lineno="213"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>spi_write(<ref refid="structSpiController" kindref="compound">SpiController</ref><sp/>*spi,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>wdata)</highlight></codeline>
+<codeline lineno="223"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/>spi-&gt;WDATA<sp/>=<sp/>wdata;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/>spi_wait_ready(spi);</highlight></codeline>
+<codeline lineno="226"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>uint8_t<sp/>spi_transfer(<ref refid="structSpiController" kindref="compound">SpiController</ref><sp/>*spi,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>wdata)</highlight></codeline>
+<codeline lineno="236"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/>spi-&gt;WDATA<sp/>=<sp/>wdata;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/>spi_wait_ready(spi);</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>spi-&gt;RDATA;</highlight></codeline>
+<codeline lineno="240"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="include/spi.h"/>
+  </compounddef>
+</doxygen>
