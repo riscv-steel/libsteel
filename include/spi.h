@@ -27,9 +27,6 @@ enum SpiMode
   SPI_MODE3_CPOL1_CPHA1 = 3
 };
 
-// Pointer to RISC-V Steel built-in SPI controller
-#define RVSTEEL_SPI ((SpiController *)0x80030000)
-
 /**
  * @brief Set the clock polarity of the SPI Controller. An attempt to set CPOL to a value other than
  * 0 or 1 is gracefully ignored (no errors are given).

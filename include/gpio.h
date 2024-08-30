@@ -34,9 +34,6 @@ enum GpioLogicValue
   HIGH = 1
 };
 
-// Pointer to RISC-V Steel built-in GPIO controller
-#define RVSTEEL_GPIO ((GpioController *)0x80020000)
-
 /**
  * @brief Set a GPIO pin to work as an output.
  *

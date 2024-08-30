@@ -25,9 +25,6 @@ typedef struct
   volatile uint32_t MTIMECMPH;
 } MTimerController;
 
-// Pointer to RISC-V Steel built-in timer registers
-#define RVSTEEL_MTIMER ((MTimerController *)0x80010000)
-
 // Offset of the Counter Enable (EN) bit of the MTIME register
 #define MTIMER_CR_EN_OFFSET 0U
 

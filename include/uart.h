@@ -21,9 +21,6 @@ typedef struct
   volatile uint32_t READY;
 } UartController;
 
-// Pointer to RISC-V Steel built-in UART device
-#define RVSTEEL_UART ((UartController *)0x80000000)
-
 /**
  * @brief Read register READY from the UART device. Return true if the device is ready to send
  * data, false otherwise.
