@@ -3,7 +3,7 @@
 
 #include "globals.h"
 
-// Struct providing access to RISC-V Steel SPI Device registers
+// Struct providing access to RISC-V Steel SPI Controller registers
 typedef struct
 {
   volatile uint32_t CPOL;        // Clock Polarity (CPOL) register.            Address offset: 0x00.

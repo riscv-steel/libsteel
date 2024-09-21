@@ -10,7 +10,7 @@
 
 #include "globals.h"
 
-// Struct providing access to RISC-V Steel GPIO Device registers
+// Struct providing access to RISC-V Steel GPIO Controller registers
 typedef struct
 {
   // IN (Input) Register. Address offset: 0x00.

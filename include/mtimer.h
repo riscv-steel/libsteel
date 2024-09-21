@@ -10,7 +10,7 @@
 
 #include "globals.h"
 
-// Struct providing access to RISC-V Steel MTimer Device registers
+// Struct providing access to RISC-V Steel MTimer Controller registers
 typedef struct
 {
   // Control Register (CR). Address offset: 0x00

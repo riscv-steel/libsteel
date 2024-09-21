@@ -10,7 +10,7 @@
 
 #include "globals.h"
 
-// Struct providing access to RISC-V Steel UART Device registers
+// Struct providing access to RISC-V Steel UART Controller registers
 typedef struct
 {
   // Write Data (WDATA) Register. Address offset: 0x00
