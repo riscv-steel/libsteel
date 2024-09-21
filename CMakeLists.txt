@@ -44,8 +44,7 @@ set(CMAKE_CXX_COMPILER ${TOOLCHAIN_PREFIX}g++)
 # Find GCC
 find_program(PATH_CMAKE_C_COMPILER
   ${CMAKE_C_COMPILER}
-  PATHS ENV PATH
-  REQUIRED
+  PATHS "/opt/riscv/bin" ENV PATH
 )
 
 # Print whether GCC was found
@@ -75,18 +74,18 @@ add_library(steel STATIC ${SOURCES} ${HEADERS})
 
 target_compile_options(steel
   PRIVATE
-    -Wall
-    -Wextra
-    -Wpedantic
-    -mstrict-align
-    -march=${APP_ARCH}
-    -mabi=${APP_ABI}
-    -ffreestanding
-    -ffunction-sections
-    -fdata-sections
+  -Wall
+  -Wextra
+  -Wpedantic
+  -mstrict-align
+  -march=${APP_ARCH}
+  -mabi=${APP_ABI}
+  -ffreestanding
+  -ffunction-sections
+  -fdata-sections
 )
 
 target_include_directories(steel
   PUBLIC
-    ${CMAKE_CURRENT_LIST_DIR}/include/
+  ${CMAKE_CURRENT_LIST_DIR}/include/
 )
