@@ -19,6 +19,8 @@ typedef struct
   volatile uint32_t RDATA;
   // Ready (READY) Register. Address offset: 0x08
   volatile uint32_t READY;
+  // RX Status (RXSTATUS) Register. Address offset: 0x0c
+  volatile uint32_t RXSTATUS;
 } UartController;
 
 /**
@@ -29,7 +31,7 @@ typedef struct
  * @return true
  * @return false
  */
-inline bool uart_ready(UartController *uart)
+inline bool uart_ready_to_send(UartController *uart)
 {
   return uart->READY == 1;
 }
@@ -55,7 +57,7 @@ inline uint8_t uart_read(UartController *uart)
  */
 inline void uart_write(UartController *uart, uint8_t data)
 {
-  while (!uart_ready(uart))
+  while (!uart_ready_to_send(uart))
     ;
   uart->WDATA = data;
 }
@@ -73,6 +75,19 @@ inline void uart_write_string(UartController *uart, const char *str)
     uart_write(uart, *(str));
     str++;
   }
+}
+
+/**
+ * @brief Read the RXSTATUS register of the UART controller. Returns true when new data was received
+ * but not yet read.
+ *
+ * @param uart
+ * @return true
+ * @return false
+ */
+inline bool uart_data_received(UartController *uart)
+{
+  return uart->RXSTATUS == 1;
 }
 
 #endif // __LIBSTEEL_UART__
