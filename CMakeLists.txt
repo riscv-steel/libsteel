@@ -9,7 +9,7 @@ cmake_minimum_required(VERSION 3.15)
 
 project(libsteel)
 
-include_directories(steel
+target_include_directories(steel
   PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}
 )
