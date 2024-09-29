@@ -31,7 +31,7 @@ typedef struct
  * @return true
  * @return false
  */
-inline bool uart_ready_to_send(UartController *uart)
+static inline bool uart_ready_to_send(UartController *uart)
 {
   return uart->READY == 1;
 }
@@ -43,7 +43,7 @@ inline bool uart_ready_to_send(UartController *uart)
  * @param uart Pointer to the UartController
  * @return uint8_t
  */
-inline uint8_t uart_read(UartController *uart)
+static inline uint8_t uart_read(UartController *uart)
 {
   return uart->RDATA;
 }
@@ -55,7 +55,7 @@ inline uint8_t uart_read(UartController *uart)
  * @param uart Pointer to the UartController
  * @param data A byte as uint8_t
  */
-inline void uart_write(UartController *uart, uint8_t data)
+static inline void uart_write(UartController *uart, uint8_t data)
 {
   while (!uart_ready_to_send(uart))
     ;
@@ -68,7 +68,7 @@ inline void uart_write(UartController *uart, uint8_t data)
  * @param uart Pointer to the UartController
  * @param str A null-terminated C-string
  */
-inline void uart_write_string(UartController *uart, const char *str)
+static inline void uart_write_string(UartController *uart, const char *str)
 {
   while (*(str) != '\0')
   {
@@ -85,7 +85,7 @@ inline void uart_write_string(UartController *uart, const char *str)
  * @return true
  * @return false
  */
-inline bool uart_data_received(UartController *uart)
+static inline bool uart_data_received(UartController *uart)
 {
   return uart->RXSTATUS == 1;
 }

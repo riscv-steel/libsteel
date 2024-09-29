@@ -40,7 +40,7 @@ enum GpioLogicValue
  * @param gpio Pointer to the GpioController
  * @param pin_id The ID of the GPIO pin to set as an output. Note that IDs start at 0.
  */
-inline void gpio_set_output(GpioController *gpio, const uint32_t pin_id)
+static inline void gpio_set_output(GpioController *gpio, const uint32_t pin_id)
 {
   SET_BIT(gpio->OE, pin_id);
 }
@@ -51,7 +51,7 @@ inline void gpio_set_output(GpioController *gpio, const uint32_t pin_id)
  * @param gpio Pointer to the GpioController
  * @param pin_id The ID of the GPIO pin to set as an input. Note that IDs start at 0.
  */
-inline void gpio_set_input(GpioController *gpio, const uint32_t pin_id)
+static inline void gpio_set_input(GpioController *gpio, const uint32_t pin_id)
 {
   CLR_BIT(gpio->OE, pin_id);
 }
@@ -63,7 +63,7 @@ inline void gpio_set_input(GpioController *gpio, const uint32_t pin_id)
  * @param pin_id The ID of the GPIO pin to read. Note that IDs start at 0.
  * @return uint32_t
  */
-inline uint32_t gpio_read(GpioController *gpio, const uint32_t pin_id)
+static inline uint32_t gpio_read(GpioController *gpio, const uint32_t pin_id)
 {
   return READ_BIT(gpio->IN, pin_id);
 }
@@ -77,7 +77,8 @@ inline uint32_t gpio_read(GpioController *gpio, const uint32_t pin_id)
  * @param pin_id The ID of the GPIO pin to write. Note that IDs start at 0.
  * @param value Either LOW (0) or HIGH (1)
  */
-inline void gpio_write(GpioController *gpio, const uint32_t pin_id, enum GpioLogicValue value)
+static inline void gpio_write(GpioController *gpio, const uint32_t pin_id,
+                              enum GpioLogicValue value)
 {
   if (value == LOW)
     gpio->CLR = 0x1U << pin_id;
@@ -92,7 +93,7 @@ inline void gpio_write(GpioController *gpio, const uint32_t pin_id, enum GpioLog
  * @param gpio Pointer to the GpioController
  * @param pin_id The ID of the GPIO pin to set. Note that IDs start at 0.
  */
-inline void gpio_set(GpioController *gpio, const uint32_t pin_id)
+static inline void gpio_set(GpioController *gpio, const uint32_t pin_id)
 {
   gpio->SET = 0x1U << pin_id;
 }
@@ -104,7 +105,7 @@ inline void gpio_set(GpioController *gpio, const uint32_t pin_id)
  * @param gpio Pointer to the GpioController
  * @param pin_id The ID of the GPIO pin to clear. Note that IDs start at 0.
  */
-inline void gpio_clear(GpioController *gpio, const uint32_t pin_id)
+static inline void gpio_clear(GpioController *gpio, const uint32_t pin_id)
 {
   gpio->CLR = 0x1U << pin_id;
 }
@@ -116,7 +117,7 @@ inline void gpio_clear(GpioController *gpio, const uint32_t pin_id)
  * @param gpio Pointer to the GpioController
  * @param pin_id The ID of the GPIO pin to toggle. Note that IDs start at 0.
  */
-inline void gpio_toggle(GpioController *gpio, const uint32_t pin_id)
+static inline void gpio_toggle(GpioController *gpio, const uint32_t pin_id)
 {
   INV_BIT(gpio->OUT, pin_id);
 }
@@ -129,7 +130,7 @@ inline void gpio_toggle(GpioController *gpio, const uint32_t pin_id)
  * @return true
  * @return false
  */
-inline bool gpio_is_set(GpioController *gpio, const uint32_t pin_id)
+static inline bool gpio_is_set(GpioController *gpio, const uint32_t pin_id)
 {
   return READ_BIT(gpio->IN, pin_id) != 0;
 }
@@ -142,7 +143,7 @@ inline bool gpio_is_set(GpioController *gpio, const uint32_t pin_id)
  * @return true
  * @return false
  */
-inline bool gpio_is_clear(GpioController *gpio, const uint32_t pin_id)
+static inline bool gpio_is_clear(GpioController *gpio, const uint32_t pin_id)
 {
   return READ_BIT(gpio->IN, pin_id) == 0;
 }
@@ -155,7 +156,7 @@ inline bool gpio_is_clear(GpioController *gpio, const uint32_t pin_id)
  * @param bit_mask A bit mask indicating which GPIO pins to set as outputs. Example:
  * 0b00010010 sets gpio[1] and gpio[4] as outputs.
  */
-inline void gpio_set_output_group(GpioController *gpio, const uint32_t bit_mask)
+static inline void gpio_set_output_group(GpioController *gpio, const uint32_t bit_mask)
 {
   SET_FLAG(gpio->OE, bit_mask);
 }
@@ -168,7 +169,7 @@ inline void gpio_set_output_group(GpioController *gpio, const uint32_t bit_mask)
  * @param bit_mask A bit mask indicating which GPIO pins to set as inputs. Example:
  * 0b00001100 sets gpio[2] and gpio[3] as inputs.
  */
-inline void gpio_set_input_group(GpioController *gpio, const uint32_t bit_mask)
+static inline void gpio_set_input_group(GpioController *gpio, const uint32_t bit_mask)
 {
   CLR_FLAG(gpio->OE, bit_mask);
 }
@@ -179,7 +180,7 @@ inline void gpio_set_input_group(GpioController *gpio, const uint32_t bit_mask)
  * @param gpio Pointer to the GpioController
  * @return uint32_t
  */
-inline uint32_t gpio_read_all(GpioController *gpio)
+static inline uint32_t gpio_read_all(GpioController *gpio)
 {
   return gpio->IN;
 }
@@ -194,7 +195,7 @@ inline uint32_t gpio_read_all(GpioController *gpio)
  * sets gpio[4] to 1 and all remaining pins to 0 (assuming GPIO pins 0 to 7 were previously set as
  * outputs).
  */
-inline void gpio_write_group(GpioController *gpio, const uint32_t value_mask)
+static inline void gpio_write_group(GpioController *gpio, const uint32_t value_mask)
 {
   gpio->OUT = value_mask;
 }
@@ -207,7 +208,7 @@ inline void gpio_write_group(GpioController *gpio, const uint32_t value_mask)
  * @param bit_mask A bit mask indicating which GPIO pins must have their values set to logic 1.
  * Example: 0b00010000 sets gpio[4] to 1, all remaining pins keep their current values.
  */
-inline void gpio_set_group(GpioController *gpio, const uint32_t bit_mask)
+static inline void gpio_set_group(GpioController *gpio, const uint32_t bit_mask)
 {
   gpio->SET = bit_mask;
 }
@@ -220,7 +221,7 @@ inline void gpio_set_group(GpioController *gpio, const uint32_t bit_mask)
  * @param bit_mask A bit mask indicating which GPIO pins must have their values set to logic 0.
  * Example: 0b00010000 sets gpio[4] to 0, all remaining pins keep their current values.
  */
-inline void gpio_clear_group(GpioController *gpio, const uint32_t bit_mask)
+static inline void gpio_clear_group(GpioController *gpio, const uint32_t bit_mask)
 {
   gpio->CLR = bit_mask;
 }
@@ -234,7 +235,7 @@ inline void gpio_clear_group(GpioController *gpio, const uint32_t bit_mask)
  * Example: 0b00010000 toggles gpio[4] from 0->1 or 1->0, depending on its current value. All
  * remaining pins keep their current values.
  */
-inline void gpio_toggle_group(GpioController *gpio, const uint32_t bit_mask)
+static inline void gpio_toggle_group(GpioController *gpio, const uint32_t bit_mask)
 {
   INV_FLAG(gpio->OUT, bit_mask);
 }

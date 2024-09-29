@@ -494,7 +494,7 @@
  * ```
  *
  */
-inline void csr_global_enable_irq()
+static inline void csr_global_enable_irq()
 {
   CSR_SET(CSR_MSTATUS, MSTATUS_MIE_MASK);
 }
@@ -504,7 +504,7 @@ inline void csr_global_enable_irq()
  * (MIE) bit in the Machine Status (MSTATUS) CSR.
  *
  */
-inline void csr_global_disable_irq()
+static inline void csr_global_disable_irq()
 {
   CSR_CLEAR(CSR_MSTATUS, MSTATUS_MIE_MASK);
 }
@@ -513,7 +513,7 @@ inline void csr_global_disable_irq()
  * @brief Enable vectored mode for interrupt requests.
  *
  */
-inline void csr_enable_vectored_mode_irq()
+static inline void csr_enable_vectored_mode_irq()
 {
   CSR_SET(CSR_MTVEC, 1U);
 }
@@ -522,7 +522,7 @@ inline void csr_enable_vectored_mode_irq()
  * @brief Enable direct mode for interrupt requests.
  *
  */
-inline void csr_enable_direct_mode_irq()
+static inline void csr_enable_direct_mode_irq()
 {
   CSR_CLEAR(CSR_MTVEC, 1U);
 }

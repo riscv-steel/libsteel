@@ -37,7 +37,7 @@ typedef struct
  *
  * @param mtimer Pointer to the MTimerController
  */
-inline void mtimer_enable(MTimerController *mtimer)
+static inline void mtimer_enable(MTimerController *mtimer)
 {
   SET_FLAG(mtimer->CR, MTIMER_CR_EN_MASK);
 }
@@ -48,7 +48,7 @@ inline void mtimer_enable(MTimerController *mtimer)
  *
  * @param mtimer Pointer to the MTimerController
  */
-inline void mtimer_disable(MTimerController *mtimer)
+static inline void mtimer_disable(MTimerController *mtimer)
 {
   CLR_FLAG(mtimer->CR, MTIMER_CR_EN_MASK);
 }
@@ -60,7 +60,7 @@ inline void mtimer_disable(MTimerController *mtimer)
  * @param mtimer Pointer to the MTimerController
  * @param new_value The new 64-bit value for the MTIMER register
  */
-inline void mtimer_set_counter(MTimerController *mtimer, uint64_t new_value)
+static inline void mtimer_set_counter(MTimerController *mtimer, uint64_t new_value)
 {
   mtimer->MTIMEL = new_value & 0xFFFFFFFF;
   mtimer->MTIMEH = new_value >> 32;
@@ -72,7 +72,7 @@ inline void mtimer_set_counter(MTimerController *mtimer, uint64_t new_value)
  * @param mtimer Pointer to the MTimerController
  * @return uint64_t
  */
-inline uint64_t mtimer_get_counter(MTimerController *mtimer)
+static inline uint64_t mtimer_get_counter(MTimerController *mtimer)
 {
   uint32_t cnt_l = mtimer->MTIMEL;
   uint64_t cnt_h = mtimer->MTIMEH;
@@ -84,7 +84,7 @@ inline uint64_t mtimer_get_counter(MTimerController *mtimer)
  *
  * @param mtimer Pointer to the MTimerController
  */
-inline void mtimer_clear_counter(MTimerController *mtimer)
+static inline void mtimer_clear_counter(MTimerController *mtimer)
 {
   mtimer->MTIMEL = 0;
   mtimer->MTIMEH = 0;
@@ -96,7 +96,7 @@ inline void mtimer_clear_counter(MTimerController *mtimer)
  * @param mtimer Pointer to the MTimerController
  * @param new_value The new 64-bit value for the MTIMERCMP register
  */
-inline void mtimer_set_compare(MTimerController *mtimer, uint64_t new_value)
+static inline void mtimer_set_compare(MTimerController *mtimer, uint64_t new_value)
 {
   /* Writing -1 to MTIMECMPL, writing the MSB word first and finally writing the LSB word prevents
    * spurious interrupts to be triggered due to the intermediate value held by the register during

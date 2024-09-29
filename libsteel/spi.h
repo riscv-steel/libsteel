@@ -34,7 +34,7 @@ enum SpiMode
  * @param spi Pointer to the SpiController.
  * @param cpol The new clock polarity. Legal values are either 0 or 1.
  */
-inline void spi_set_cpol(SpiController *spi, const uint8_t cpol)
+static inline void spi_set_cpol(SpiController *spi, const uint8_t cpol)
 {
   if (cpol <= 1)
     spi->CPOL = cpol;
@@ -47,7 +47,7 @@ inline void spi_set_cpol(SpiController *spi, const uint8_t cpol)
  * @param spi Pointer to the SpiController.
  * @param cpha The new clock phase. Legal values are either 0 or 1.
  */
-inline void spi_set_cpha(SpiController *spi, const uint8_t cpha)
+static inline void spi_set_cpha(SpiController *spi, const uint8_t cpha)
 {
   if (cpha <= 1)
     spi->CPHA = cpha;
@@ -60,7 +60,7 @@ inline void spi_set_cpha(SpiController *spi, const uint8_t cpha)
  * @return 0
  * @return 1
  */
-inline uint32_t spi_get_cpol(SpiController *spi)
+static inline uint32_t spi_get_cpol(SpiController *spi)
 {
   return spi->CPOL;
 }
@@ -72,7 +72,7 @@ inline uint32_t spi_get_cpol(SpiController *spi)
  * @return 0
  * @return 1
  */
-inline uint32_t spi_get_cpha(SpiController *spi)
+static inline uint32_t spi_get_cpha(SpiController *spi)
 {
   return spi->CPHA;
 }
@@ -90,7 +90,7 @@ inline uint32_t spi_get_cpha(SpiController *spi)
  * @param spi Pointer to the SpiController.
  * @param mode The operation mode, chosen from `enum SpiMode.`
  */
-inline void spi_set_mode(SpiController *spi, enum SpiMode mode)
+static inline void spi_set_mode(SpiController *spi, enum SpiMode mode)
 {
   switch (mode)
   {
@@ -121,7 +121,7 @@ inline void spi_set_mode(SpiController *spi, enum SpiMode mode)
  * @param spi Pointer to the SpiController.
  * @return enum SpiMode
  */
-inline enum SpiMode spi_get_mode(SpiController *spi)
+static inline enum SpiMode spi_get_mode(SpiController *spi)
 {
   return ((enum SpiMode)((spi->CPHA << 1) | spi->CPOL));
 }
@@ -134,7 +134,7 @@ inline enum SpiMode spi_get_mode(SpiController *spi)
  * @param spi Pointer to the SpiController.
  * @param peripheral_id The ID of the SPI peripheral to select. Note that peripheral IDs start at 0.
  */
-inline void spi_select(SpiController *spi, const uint8_t peripheral_id)
+static inline void spi_select(SpiController *spi, const uint8_t peripheral_id)
 {
   spi->CHIP_SELECT = peripheral_id;
 }
@@ -144,7 +144,7 @@ inline void spi_select(SpiController *spi, const uint8_t peripheral_id)
  *
  * @param spi Pointer to the SpiController.
  */
-inline void spi_deselect(SpiController *spi)
+static inline void spi_deselect(SpiController *spi)
 {
   spi->CHIP_SELECT = 0xffffffff;
 }
@@ -156,7 +156,7 @@ inline void spi_deselect(SpiController *spi)
  * @param spi Pointer to the SpiController.
  * @return uint8_t
  */
-inline uint8_t spi_get_cs(SpiController *spi)
+static inline uint8_t spi_get_cs(SpiController *spi)
 {
   return spi->CHIP_SELECT;
 }
@@ -166,7 +166,7 @@ inline uint8_t spi_get_cs(SpiController *spi)
  *
  * @param spi Pointer to the SpiController.
  */
-inline bool spi_is_ready(SpiController *spi)
+static inline bool spi_is_ready(SpiController *spi)
 {
   return spi->BUSY == 0;
 }
@@ -176,7 +176,7 @@ inline bool spi_is_ready(SpiController *spi)
  *
  * @param spi Pointer to the SpiController.
  */
-inline void spi_wait_ready(SpiController *spi)
+static inline void spi_wait_ready(SpiController *spi)
 {
   while (!spi_is_ready(spi))
     ;
@@ -194,7 +194,7 @@ inline void spi_wait_ready(SpiController *spi)
  * @param conf Configuration value for the SCLK pin. The frequency of the `clock` pin is divided by
  * a factor equal to `2*(conf + 1)`.
  */
-inline void spi_set_clock(SpiController *spi, const uint8_t conf)
+static inline void spi_set_clock(SpiController *spi, const uint8_t conf)
 {
   spi->CLOCK_CONF = conf;
 }
@@ -207,7 +207,7 @@ inline void spi_set_clock(SpiController *spi, const uint8_t conf)
  * @param spi Pointer to the SpiController.
  * @return uint8_t
  */
-inline uint8_t spi_get_clock(SpiController *spi)
+static inline uint8_t spi_get_clock(SpiController *spi)
 {
   return spi->CLOCK_CONF;
 }
@@ -219,7 +219,7 @@ inline uint8_t spi_get_clock(SpiController *spi)
  * @param spi Pointer to the SpiController.
  * @param wdata The byte to be sent.
  */
-inline void spi_write(SpiController *spi, const uint8_t wdata)
+static inline void spi_write(SpiController *spi, const uint8_t wdata)
 {
   spi->WDATA = wdata;
   spi_wait_ready(spi);
@@ -232,7 +232,7 @@ inline void spi_write(SpiController *spi, const uint8_t wdata)
  * @param spi Pointer to the SpiController.
  * @param wdata The byte to be sent.
  */
-inline uint8_t spi_transfer(SpiController *spi, const uint8_t wdata)
+static inline uint8_t spi_transfer(SpiController *spi, const uint8_t wdata)
 {
   spi->WDATA = wdata;
   spi_wait_ready(spi);
