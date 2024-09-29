@@ -8,10 +8,10 @@
 #ifndef __LIBSTEEL_MCU__
 #define __LIBSTEEL_MCU__
 
-#include "csr.h"
-#include "gpio.h"
-#include "mtimer.h"
-#include "spi.h"
-#include "uart.h"
+#include "libsteel/csr.h"
+#include "libsteel/gpio.h"
+#include "libsteel/mtimer.h"
+#include "libsteel/spi.h"
+#include "libsteel/uart.h"
 
 #endif // __LIBSTEEL_MCU__
