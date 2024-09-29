@@ -5,8 +5,8 @@
 // SPDX-License-Identifier: MIT
 // ----------------------------------------------------------------------------
 
-#ifndef __LIBSTEEL_MCU__
-#define __LIBSTEEL_MCU__
+#ifndef __RVSTEEL_LIBSTEEL__
+#define __RVSTEEL_LIBSTEEL__
 
 #include "libsteel/csr.h"
 #include "libsteel/gpio.h"
@@ -14,4 +14,4 @@
 #include "libsteel/spi.h"
 #include "libsteel/uart.h"
 
-#endif // __LIBSTEEL_MCU__
+#endif // __RVSTEEL_LIBSTEEL__
